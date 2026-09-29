@@ -58,12 +58,25 @@
   // ---------------------------------------------------------------- map
   const map = L.map('map', { zoomControl: false, attributionControl: true }).setView(LVIV_CENTER, 14);
   L.control.zoom({ position: 'bottomright' }).addTo(map);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+  const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     maxZoom: 20,
     subdomains: 'abcd',
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
   }).addTo(map);
   map.attributionControl.setPrefix('');
+  // Tile fallback: some hosts (e.g. sandboxed previews) block third-party images. Detect it and
+  // switch to a schematic "paper" background with permanent labels so the map stays usable.
+  (function watchTiles() {
+    let loaded = 0, failed = 0, decided = false;
+    const decide = () => {
+      if (decided) return;
+      if (loaded === 0 && failed > 0) { decided = true; document.body.classList.add('no-tiles'); const n = $('#tileNotice'); if (n) n.hidden = false; }
+      else if (loaded > 0) decided = true;
+    };
+    tiles.on('tileload', () => { loaded++; decide(); });
+    tiles.on('tileerror', () => { failed++; setTimeout(decide, 1500); });
+    setTimeout(() => { if (loaded === 0) { failed++; decide(); } }, 6000);
+  })();
   const syncZoomClass = () => document.body.classList.toggle('zoomed-in', map.getZoom() >= 15);
   map.on('zoomend', syncZoomClass); syncZoomClass();
 
@@ -308,6 +321,7 @@
   }
 
   $('#detailClose').addEventListener('click', closeDetail);
+  $('#tileNoticeClose')?.addEventListener('click', () => { $('#tileNotice').hidden = true; });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !detailEl.hidden) closeDetail(); });
   map.on('click', () => { if (!detailEl.hidden) closeDetail(); });
 
