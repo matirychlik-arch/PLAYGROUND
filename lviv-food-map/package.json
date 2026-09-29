@@ -1,0 +1,11 @@
+{
+  "name": "lviv-food-map",
+  "version": "1.0.0",
+  "description": "Interactive food map of Lviv based on places shown/recommended by Misha Katsurin and Anton Ptushkin",
+  "private": true,
+  "scripts": {
+    "build-data": "node scripts/build-data.js",
+    "start": "node scripts/build-data.js && npx --yes serve -l 5173 ."
+  },
+  "license": "MIT"
+}

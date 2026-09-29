@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Lviv Food Map · Katsurin & Ptushkin</title>
+  <meta name="description" content="Interaktywna mapa gastronomiczna Lwowa na podstawie miejsc pokazanych i polecanych przez Mishę Katsurina i Antona Ptushkina." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥟</text></svg>" />
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Sidebar (desktop) / bottom sheet (mobile) -->
+    <aside id="panel" class="panel" aria-label="Lista miejsc">
+      <div class="sheet-handle" id="sheetHandle" role="button" aria-label="Rozwiń lub zwiń listę" tabindex="0"><span></span></div>
+
+      <header class="panel-header">
+        <div class="brand">
+          <div class="brand-title">
+            <h1>Lviv Food Map</h1>
+            <p class="brand-sub">Miejsca Kacurina &amp; Ptuszkina · Львів</p>
+          </div>
+          <button class="icon-btn" id="aboutBtn" title="O projekcie" aria-label="O projekcie">i</button>
+        </div>
+
+        <label class="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="search" type="search" placeholder="Szukaj lokalu, dania, ulicy…" autocomplete="off" />
+          <button class="clear" id="searchClear" aria-label="Wyczyść">×</button>
+        </label>
+
+        <div class="chips" id="categoryChips" role="tablist" aria-label="Kategorie"></div>
+
+        <details class="more-filters" id="moreFilters">
+          <summary>
+            <span>Filtry</span>
+            <span class="badge" id="activeFilterCount" hidden></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="filter-groups">
+            <div class="filter-group">
+              <div class="filter-label">Polecał</div>
+              <div class="seg" id="bySeg" role="radiogroup">
+                <button data-by="all" class="on" role="radio" aria-checked="true">Wszyscy</button>
+                <button data-by="katsurin" role="radio" aria-checked="false">Katsurin</button>
+                <button data-by="ptushkin" role="radio" aria-checked="false">Ptushkin</button>
+                <button data-by="both" role="radio" aria-checked="false">Obaj</button>
+              </div>
+            </div>
+            <div class="filter-group">
+              <div class="filter-label">Status</div>
+              <div class="seg" id="statusSeg" role="radiogroup">
+                <button data-status="all" class="on" role="radio" aria-checked="true">Wszystkie</button>
+                <button data-status="open" role="radio" aria-checked="false">Otwarte</button>
+                <button data-status="closed" role="radio" aria-checked="false">Zamknięte</button>
+              </div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="visitedOnly" />
+              <span class="track"><span class="thumb"></span></span>
+              <span class="toggle-text">Pokaż tylko miejsca odwiedzone osobiście</span>
+            </label>
+            <label class="toggle">
+              <input type="checkbox" id="showClosed" />
+              <span class="track"><span class="thumb"></span></span>
+              <span class="toggle-text">Pokaż historyczne / zamknięte miejsca</span>
+            </label>
+            <label class="toggle">
+              <input type="checkbox" id="showSecondary" />
+              <span class="track"><span class="thumb"></span></span>
+              <span class="toggle-text">Pokaż miejsca ze źródeł wtórnych</span>
+            </label>
+          </div>
+        </details>
+      </header>
+
+      <div class="results-bar">
+        <span id="resultCount">0 miejsc</span>
+        <button class="link-btn" id="resetBtn">Wyczyść filtry</button>
+      </div>
+
+      <ul id="list" class="list" role="listbox" aria-label="Miejsca"></ul>
+
+      <footer class="panel-footer">
+        <span>Dane: <a href="data/places.json">places.json</a> · <a href="data/lviv-katsurin-ptushkin-map.csv">CSV do Google My Maps</a></span>
+      </footer>
+    </aside>
+
+    <main id="mapWrap">
+      <div id="map" role="application" aria-label="Mapa Lwowa"></div>
+      <button class="fab" id="locateBtn" title="Wycentruj na Starym Mieście" aria-label="Wycentruj mapę">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="8"/></svg>
+      </button>
+      <div class="legend" id="legend" aria-hidden="true"></div>
+    </main>
+
+    <!-- Detail card -->
+    <section id="detail" class="detail" hidden aria-live="polite">
+      <button class="detail-close" id="detailClose" aria-label="Zamknij">×</button>
+      <div id="detailBody"></div>
+    </section>
+
+    <!-- About dialog -->
+    <dialog id="about" class="about">
+      <form method="dialog">
+        <h2>O mapie</h2>
+        <p>Mapa zbiera lokale gastronomiczne we Lwowie, które pojawiły się w materiałach <strong>Mishy Katsurina</strong> (Міша Кацурін) i <strong>Antona Ptushkina</strong> (Антон Птушкін): przede wszystkim w dwóch odcinkach ich show <em>„Їжа України”</em> o Lwowie (2022 i 2024), w TikTokach Katsurina z tagiem <em>#їжальвова</em> oraz w innych źródłach opisanych w README.</p>
+        <p>Każdy rekord ma poziom pewności (<span class="conf conf-high">HIGH</span> <span class="conf conf-medium">MEDIUM</span> <span class="conf conf-low">LOW</span>) i typ wzmianki: <em>odwiedzone</em>, <em>polecone</em> lub <em>źródło wtórne</em>. Domyślnie widać dwie pierwsze grupy.</p>
+        <p>Kafelki mapy: © OpenStreetMap contributors, © CARTO. Współrzędne przypisane na podstawie adresów; przed wizytą sprawdź lokal w Google Maps.</p>
+        <button class="btn primary" value="close">Zamknij</button>
+      </form>
+    </dialog>
+  </div>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="data/places.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
