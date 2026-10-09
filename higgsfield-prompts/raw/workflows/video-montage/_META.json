@@ -1,0 +1,40 @@
+{
+  "mode": "workflow",
+  "source": "bundled_resource",
+  "workflow": "video-montage",
+  "scripts_dir": "/home/user/.higgsfield/workflows/video-montage",
+  "available_paths": [
+    "SKILL.md",
+    "references/caption-clearance.md",
+    "references/faceless-captions.md",
+    "references/subtitles.md",
+    "references/ugc-captions.md",
+    "references/website-captions.md",
+    "scripts/audio_to_captions.py",
+    "scripts/burn_caps_clean.sh",
+    "scripts/caption_evidence.py",
+    "scripts/caption_guard.py",
+    "scripts/caption_placement.py",
+    "scripts/caption_regions.py",
+    "scripts/fetch_fonts.sh",
+    "scripts/fonts/OFL-Montserrat.txt",
+    "scripts/fonts/README.md",
+    "scripts/fonts/UNLICENSE-Metropolis.txt",
+    "scripts/group_captions.py",
+    "scripts/make_captions.py",
+    "scripts/subtitle_paper_burn.py",
+    "scripts/tests/test_caption_evidence.py",
+    "scripts/tests/test_caption_placement.py",
+    "scripts/tests/test_caption_regions.py",
+    "scripts/tests/test_caption_regressions.py",
+    "scripts/transcribe_words.py"
+  ],
+  "available_directories": [
+    ".",
+    "references",
+    "scripts",
+    "scripts/fonts",
+    "scripts/tests"
+  ],
+  "how_to_load_more": "Call get_workflow_bundle_file with { workflow: \"video-montage\", path } when the SKILL.md asks for a resource file."
+}

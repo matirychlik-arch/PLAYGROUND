@@ -1,8 +1,13 @@
 {
+  "mode": "workflow",
+  "source": "bundled_resource",
   "workflow": "ads-studio",
   "version": "1.2",
-  "source": "mcp__Higgsfield__get_workflow_instructions / get_workflow_bundle_file",
   "available_paths": [
     "SKILL.md"
-  ]
+  ],
+  "available_directories": [
+    "."
+  ],
+  "how_to_load_more": "Call get_workflow_bundle_file with { workflow: \"ads-studio\", path } when the SKILL.md asks for a resource file."
 }

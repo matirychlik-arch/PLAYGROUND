@@ -410,8 +410,8 @@ Never show the source edge (scale up, shift inward). 9:16: `ld × 900/W`, ly −
 Tag: only in the bridge in phrase 1; on every shot from phrase 2 on.
 
 **Palette** (change together; white stays every word and doodle fill): halo and stairs
-`#f7cbfd` · giant fill `#f8d8fc`, flat, no stroke · starburst fill `#f5e7fb`, thin lilac
-edge · word/doodle outline thin lilac-grey · magenta wash: shadows/mids toward `#c34ca7`, highlights
+`#f7cbfd` · giant fill `#f8d8fc`, flat, no stroke · starburst fill `#f5e7fb`, thin lilac edge ·
+word/doodle outline thin lilac-grey · magenta wash: shadows/mids toward `#c34ca7`, highlights
 toward `#f6d2ea` · white frames `#f7fafc` (not pure white). YAONG example palette: outline
 `#c98be0`, stairs `#f6c6ef`, burst `#efdcf8`.
 

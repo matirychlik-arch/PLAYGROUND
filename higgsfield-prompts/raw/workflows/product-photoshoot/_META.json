@@ -1,0 +1,30 @@
+{
+  "mode": "workflow",
+  "source": "bundled_resource",
+  "workflow": "product-photoshoot",
+  "version": "1.0",
+  "available_paths": [
+    "SKILL.md",
+    "references/ad-creative-pack.md",
+    "references/closeup-product-with-person.md",
+    "references/conceptual-product.md",
+    "references/hero-banner.md",
+    "references/lifestyle-scene.md",
+    "references/negative-prompts.md",
+    "references/photographer-references.md",
+    "references/photography-vocabulary.md",
+    "references/pinterest-pin.md",
+    "references/product-shot.md",
+    "references/refinement-pass.md",
+    "references/restyle.md",
+    "references/social-carousel.md",
+    "references/typography.md",
+    "references/virtual-model-tryout.md",
+    "ui.yaml"
+  ],
+  "available_directories": [
+    ".",
+    "references"
+  ],
+  "how_to_load_more": "Call get_workflow_bundle_file with { workflow: \"product-photoshoot\", path } when the SKILL.md asks for a resource file."
+}

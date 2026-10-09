@@ -1,0 +1,19 @@
+{
+  "mode": "workflow",
+  "source": "bundled_resource",
+  "workflow": "narration",
+  "version": "1.1",
+  "scripts_dir": "/home/user/.higgsfield/workflows/narration",
+  "available_paths": [
+    "SKILL.md",
+    "references/presenter-mode.md",
+    "scripts/presenter_composite.sh",
+    "scripts/speech_metrics.sh"
+  ],
+  "available_directories": [
+    ".",
+    "references",
+    "scripts"
+  ],
+  "how_to_load_more": "Call get_workflow_bundle_file with { workflow: \"narration\", path } when the SKILL.md asks for a resource file."
+}

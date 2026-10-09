@@ -1,4 +1,6 @@
 {
+  "mode": "workflow",
+  "source": "bundled_resource",
   "workflow": "faceless-video",
   "version": "2.4",
   "scripts_dir": "/home/user/.higgsfield/workflows/faceless-video",
@@ -33,5 +35,12 @@
     "scripts/validate_result_manifests.py",
     "scripts/validate_song_prompt.py",
     "scripts/verify_takes.py"
-  ]
+  ],
+  "available_directories": [
+    ".",
+    "references",
+    "scripts",
+    "scripts/tests"
+  ],
+  "how_to_load_more": "Call get_workflow_bundle_file with { workflow: \"faceless-video\", path } when the SKILL.md asks for a resource file."
 }

@@ -1,7 +1,5 @@
 # /use-after-effects/references/verification
 
-(note: instructions_markdown value from {"mode":"instructions",...} response, JSON string unescaped to plain markdown)
-
 ## Verify the actual connection
 
 Track four separate results: dependencies installed, MCP initialized and tools listed, AE returned a live response, and the current conversation can call those tools. Record the execution context for each result. `doctor`, offline skills/catalog, an enabled toggle and a startup log prove only their respective checks. A successful external PowerShell test does not establish that this conversation can control AE.
@@ -42,3 +40,4 @@ If allowed, compare the same non-mutating `ae_project_info` test from the user's
 After a relevant path, registration or user-authorized permission change, rerun one non-mutating live test and report the observed result. If still blocked, give a concise handoff: which of the four checks passed, which context failed, the exact error and the next supported action. Preserve the project; inspect state before retrying any timed-out mutation.
 
 When the user requests an actual edit, follow the retrieved AE skills, inspect before editing, render representative frames with `ae_render_frame`, review them, and save only to the intended destination. This integration currently controls After Effects; Blender and Premiere require separate adapters.
+

@@ -1,0 +1,27 @@
+{
+  "mode": "workflow",
+  "source": "bundled_resource",
+  "workflow": "video-editing",
+  "version": "1.0",
+  "available_paths": [
+    "SKILL.md",
+    "references/animation-contract.md",
+    "references/assembly.md",
+    "references/caption-systems.md",
+    "references/caption-titling.md",
+    "references/clip-geometry.md",
+    "references/compose.md",
+    "references/editor-measured.md",
+    "references/failure-modes.md",
+    "references/motion-language.md",
+    "references/provenance.md",
+    "references/shot-blueprints.md",
+    "references/title-animation.md",
+    "references/workflows.md"
+  ],
+  "available_directories": [
+    ".",
+    "references"
+  ],
+  "how_to_load_more": "Call get_workflow_bundle_file with { workflow: \"video-editing\", path } when the SKILL.md asks for a resource file."
+}

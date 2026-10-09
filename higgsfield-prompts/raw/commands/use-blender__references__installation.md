@@ -1,7 +1,5 @@
 # /use-blender/references/installation
 
-(note: instructions_markdown value from {"mode":"instructions",...} response, JSON string unescaped to plain markdown)
-
 # Install background Blender MCP
 
 Requirements: Node.js 24+ with npm, and Blender 4.2+ on the user's own computer. Target package: `fnf-blender-mcp@latest`. No add-on, source checkout, separate Python installation or open Blender window is required. Blender supplies its own Python runtime.
@@ -46,3 +44,4 @@ Refresh the MCP connection, then follow the verification reference. `doctor` sta
 ## Upgrade from 0.1.0
 
 Save any needed work before reconnecting. Replace the package and refresh the server entry with `config`; remove obsolete `BLENDER_MCP_PID` and `BLENDER_MCP_RUNTIME_DIR` overrides from this server entry. Version 0.2.0 does not discover or attach to the old bridge. `launch`, `install-addon` and `bl_screenshot` are removed; use `bl_render` with a camera for visual evidence. The old add-on can be disabled in Blender Preferences once no client needs it; do not delete user files or reset preferences during migration.
+

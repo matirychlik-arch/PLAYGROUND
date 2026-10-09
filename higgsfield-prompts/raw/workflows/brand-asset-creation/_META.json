@@ -1,5 +1,42 @@
 {
+  "mode": "workflow",
+  "source": "bundled_resource",
   "workflow": "brand-asset-creation",
   "version": "1.1",
-  "source": "mcp__Higgsfield__get_workflow_instructions / get_workflow_bundle_file"
+  "scripts_dir": "/home/user/.higgsfield/workflows/brand-asset-creation",
+  "available_paths": [
+    "SKILL.md",
+    "references/asset-analysis.md",
+    "references/brand-lock.md",
+    "references/brandbook.md",
+    "references/brandkit-design-brain.md",
+    "references/concept-boards.md",
+    "references/handoff.md",
+    "references/inline-widgets.md",
+    "references/intake.md",
+    "references/logo-export-payloads.md",
+    "references/logo-prompt-enhancer.md",
+    "references/logo.md",
+    "references/merchandise.md",
+    "references/mockups.md",
+    "references/packaging.md",
+    "references/palette.md",
+    "references/posters-banners.md",
+    "references/presentation-deck.md",
+    "references/preview-payloads.md",
+    "references/qa-and-iteration.md",
+    "references/signage.md",
+    "references/social-templates.md",
+    "references/state-payloads.md",
+    "references/typography.md",
+    "scripts/brandkit.py",
+    "scripts/build_brandbook.py",
+    "scripts/render_brandbook_pdf.py"
+  ],
+  "available_directories": [
+    ".",
+    "references",
+    "scripts"
+  ],
+  "how_to_load_more": "Call get_workflow_bundle_file with { workflow: \"brand-asset-creation\", path } when the SKILL.md asks for a resource file."
 }

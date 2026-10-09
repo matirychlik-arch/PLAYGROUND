@@ -1,7 +1,5 @@
 # /3d-jutsu/references/location-new-angles
 
-(note: instructions_markdown value from {"mode":"instructions",...} response, JSON string unescaped to plain markdown)
-
 # Location new angles
 
 Reconstruct a supplied location image as one editable scene, compose selected new
@@ -229,3 +227,4 @@ otherwise. Report material unresolved failures and unverified visual checks.
 Historical examples and measured case dimensions are evidence, not universal
 rules. This instruction does not bundle the archive's optional Python helpers or
 BLEND templates; do not invent resource paths or import catalog IDs for them.
+

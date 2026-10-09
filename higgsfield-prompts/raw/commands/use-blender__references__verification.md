@@ -1,7 +1,5 @@
 # /use-blender/references/verification
 
-(note: instructions_markdown value from {"mode":"instructions",...} response, JSON string unescaped to plain markdown)
-
 # Verify the background session
 
 Use the current conversation's tools from **higgsfield-use-blender**:
@@ -19,3 +17,4 @@ A timeout does not cancel or repeat a command. Use its `job_id` with `bl_job_sta
 `bl_open_project` guards unsaved changes, and save/render refuse existing output files unless `overwrite: true`. Use a new output path when the user has not authorized replacement. Arbitrary Python has the Blender process's filesystem permissions and can bypass those typed-tool guards.
 
 For long renders set the client tool timeout above 300 seconds. If the client times out before a job ID arrives, report uncertain completion and avoid resubmission. Verify only the platforms and Blender versions actually tested; fixtures alone do not prove native scene editing.
+

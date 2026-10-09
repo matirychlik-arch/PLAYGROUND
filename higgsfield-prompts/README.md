@@ -109,6 +109,13 @@ To są najbardziej „inżynierskie” prompty w całym zbiorze – dokładny pr
 (zwykle `media.images` 1–5, czasem pole „Wishes”) + ogólne reguły Katany. Tu „prompt” to samo wideo: Claude ma je przeanalizować
 workflowem `raw/workflows/katana/` i odtworzyć z subjectem użytkownika. Rozmiar pliku mówi, który to rodzaj (patrz `INVENTORY.md`).
 
+Presety z pełnym promptem (rozmiar 32–46 KB): `grunge-aura`, `the-boys`, `kawaii-pop` (+`.part-2`), `let-me-show-you` (+`.part-2`),
+`last-katana`, `pink-collage`, `launch-cut` (+`.part-2`), `lights-out`, `living-lab`, `many-lies`, `physical-body`, `travel-edit`.
+Serwer dzieli najdłuższe na części (`/katana/<slug>/part-2-<hash>`); zapisane jako `<slug>.part-2.md`. `chrome-orbit` to jednozdaniowy
+opis ruchu kamery + wideo referencyjne. Kilka z nich to w praktyce **osobne produkty z własnym kitem** (skrypt renderujący na CDN
+Higgsfield, sha256, fonty): `launch-cut` (30‑sekundowa reklama produktu z klonem UI), `lights-out` (17 s kinetic typography),
+`living-lab` (30 s launch film), `many-lies` i `physical-body` (strobe/overlay edity z jednego klipu, zero kredytów), `travel-edit` (28 s mood edit).
+
 | Kategoria | Slugi |
 |---|---|
 | **aura_farming** (20) | dreamy-streetwear, power-suit, outfit-check, tiger-eyes, frame-dance, tokyo-bloom, star, blue-eyes, dark-and-moody, painting-flow, dark-aura, nocturne, car-edit, xerox-3, xerox-2, the-boys, kawaii-pop, let-me-show-you, last-katana, pink-collage |
@@ -193,6 +200,15 @@ Nie są to prompty Higgsfield, tylko zewnętrzny pakiet (MIT) zbudowany nad ich 
 `templates/*` (10 gatunkowych szablonów promptów wideo + text‑overlays + character‑design).
 
 ---
+
+## Jak zweryfikowano wierność kopii
+
+Każdy plik w `raw/workflows`, `raw/presets`, `raw/katana` i `raw/commands` został **wyciągnięty programowo** z surowych
+wyników narzędzi MCP (transkrypty sesji + wyniki zapisane przez harness na dysku) i porównany bajt w bajt z tym, co zapisali
+agenci; różnice nadpisano dokładną kopią. Pliki bundle mają zgodność z `size_bytes` raportowanym przez serwer. Dwie wersje
+SKILL.md: `SKILL.md` = to, co serwuje `get_workflow_instructions` (z doklejoną sekcją o unlimited generations i meta),
+`SKILL.bundle.md` = surowy plik z bundle, zapisany tylko tam, gdzie się różni (`ugc-video`, `video-editing`, `video-montage`, `website-builder-flow`).
+`_META.json` / `_MANIFEST.txt` obok SKILL.md = metadane odpowiedzi (wersja, lista plików).
 
 ## Co się NIE udało / ograniczenia
 

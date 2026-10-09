@@ -1,7 +1,5 @@
 # /use-after-effects/references/installation
 
-(note: instructions_markdown value from {"mode":"instructions",...} response, JSON string unescaped to plain markdown)
-
 ## Install the local runtime
 
 Requirements: Node.js 24+, npm, and Adobe After Effects installed on macOS or Windows. Automated checks cover instruction loading, not a live Windows installation. A reported successful Windows shell test does not establish end-to-end control from the desktop conversation.
@@ -157,3 +155,4 @@ On Windows, `install-codex` can fail even when `codex.cmd` works in PowerShell: 
 When using an explicit AE path, add `env.AE_MCP_EXE` to this server entry in a JSON MCP client configuration. For Codex's TOML configuration, merge the printed `command` and `args` into `[mcp_servers.higgsfield-use-after-effects]` and the override into `[mcp_servers.higgsfield-use-after-effects.env]` as `AE_MCP_EXE`; use the discovered configuration file for the intended host/profile. The helper's `config` output and `install-codex` registration do not include this override automatically. Preserve other servers and existing settings; do not paste the `mcpServers` JSON document into TOML. Use valid escaping for Windows paths, or forward slashes. Verify the saved entry contains the persistent Node/server paths and the AE override before refreshing the MCP connection.
 
 Finish by loading `/use-after-effects/references/verification` and running its live checks. If blocked, report the failing command/error, discovered Node/npm/AE paths and the specific remaining action. Do not stop at a generic request to reinstall dependencies when a verified path or launcher fallback works.
+
