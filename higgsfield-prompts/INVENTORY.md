@@ -1,7 +1,7 @@
 # INVENTORY – pełna lista plików (auto-generowana)
 
 Rozmiary w bajtach. `raw/workflows/*/SKILL.md` = tekst serwowany przez `get_workflow_instructions`; `SKILL.bundle.md` = surowy plik z bundle, jeśli różni się od serwowanego.
-**Razem: 596 plików, 8.1 MB.**
+**Razem: 695 plików, 9.2 MB.**
 
 
 ## A. Workflowy MCP — 248 plików, 3918 KB
@@ -325,7 +325,7 @@ Rozmiary w bajtach. `raw/workflows/*/SKILL.md` = tekst serwowany przez `get_work
 | `presets/whats-inside.md` | 3698 |
 | `presets/whip-pan.md` | 5893 |
 
-## C. Katana — 31 plików, 632 KB
+## C. Katana — 31 plików, 631 KB
 
 | plik | B |
 |---|---:|
@@ -361,7 +361,116 @@ Rozmiary w bajtach. `raw/workflows/*/SKILL.md` = tekst serwowany przez `get_work
 | `katana/xerox-2.md` | 7332 |
 | `katana/xerox-3.md` | 7332 |
 
-## D/E. Komendy — 15 plików, 80 KB
+## I. Katana – mapy montażowe referencji — 20 plików, 124 KB
+
+| plik | B |
+|---|---:|
+| `katana-refs/blue-eyes.md` | 8249 |
+| `katana-refs/car-edit.md` | 7261 |
+| `katana-refs/chrome-orbit.md` | 5518 |
+| `katana-refs/dark-and-moody.md` | 5674 |
+| `katana-refs/dark-aura.md` | 11172 |
+| `katana-refs/dreamy-streetwear.md` | 6898 |
+| `katana-refs/frame-dance.md` | 3041 |
+| `katana-refs/grunge-aura.md` | 10079 |
+| `katana-refs/kawaii-pop.md` | 3200 |
+| `katana-refs/last-katana.md` | 5868 |
+| `katana-refs/many-lies.md` | 1765 |
+| `katana-refs/nocturne.md` | 5443 |
+| `katana-refs/outfit-check.md` | 2062 |
+| `katana-refs/painting-flow.md` | 5887 |
+| `katana-refs/power-suit.md` | 7545 |
+| `katana-refs/star.md` | 4225 |
+| `katana-refs/tiger-eyes.md` | 3241 |
+| `katana-refs/tokyo-bloom.md` | 6822 |
+| `katana-refs/xerox-2.md` | 11326 |
+| `katana-refs/xerox-3.md` | 12536 |
+
+## I. Katana – kity CDN — 79 plików, 964 KB
+
+| plik | B |
+|---|---:|
+| `katana-kits/_tools/job.sh` | 5238 |
+| `katana-kits/_tools/summ2.py` | 3159 |
+| `katana-kits/kits_listing.txt` | 19282 |
+| `katana-kits/let-me-show-you/aura_kit/README.txt` | 425 |
+| `katana-kits/let-me-show-you/aura_kit/aura.py` | 36306 |
+| `katana-kits/let-me-show-you/aura_kit/clean_specs/B.json` | 217 |
+| `katana-kits/let-me-show-you/aura_kit/clean_specs/G.json` | 486 |
+| `katana-kits/let-me-show-you/aura_kit/clean_specs/H.json` | 461 |
+| `katana-kits/let-me-show-you/aura_kit/compose.py` | 20442 |
+| `katana-kits/let-me-show-you/aura_kit/plan_template.json` | 9118 |
+| `katana-kits/lights-out/SHA256SUMS` | 337 |
+| `katana-kits/lights-out/fonts/OFL-Anton.txt` | 4484 |
+| `katana-kits/lights-out/fonts/OFL-Playfair.txt` | 4449 |
+| `katana-kits/lights-out/render_template.py` | 26874 |
+| `katana-kits/living-lab/living-lab-kit/audio/score.html` | 36014 |
+| `katana-kits/living-lab/living-lab-kit/comp/clips.js` | 48 |
+| `katana-kits/living-lab/living-lab-kit/comp/deco.js` | 5939 |
+| `katana-kits/living-lab/living-lab-kit/comp/engine.js` | 16246 |
+| `katana-kits/living-lab/living-lab-kit/comp/film.js` | 1318 |
+| `katana-kits/living-lab/living-lab-kit/comp/film_data.js` | 610 |
+| `katana-kits/living-lab/living-lab-kit/comp/index.html` | 587 |
+| `katana-kits/living-lab/living-lab-kit/comp/living_lab.js` | 32104 |
+| `katana-kits/living-lab/living-lab-kit/fonts/fonts_local.css` | 6108 |
+| `katana-kits/living-lab/living-lab-kit/tools/cap.js` | 2273 |
+| `katana-kits/living-lab/living-lab-kit/tools/cap_audio.js` | 1456 |
+| `katana-kits/living-lab/living-lab-kit/tools/cut_music.sh` | 420 |
+| `katana-kits/living-lab/living-lab-kit/tools/fetch.py` | 1766 |
+| `katana-kits/living-lab/living-lab-kit/tools/keysheet.sh` | 1277 |
+| `katana-kits/living-lab/living-lab-kit/tools/music_window.py` | 6197 |
+| `katana-kits/living-lab/living-lab-kit/tools/render.sh` | 2393 |
+| `katana-kits/living-lab/living-lab-kit/tools/review.sh` | 838 |
+| `katana-kits/living-lab/living-lab-kit/tools/sheet.sh` | 457 |
+| `katana-kits/many-lies/many-lies-kit/KIT.json` | 12578 |
+| `katana-kits/many-lies/many-lies-kit/assets.json` | 11964 |
+| `katana-kits/many-lies/many-lies-kit/engine/ana.html` | 5332 |
+| `katana-kits/many-lies/many-lies-kit/engine/fx.js` | 36435 |
+| `katana-kits/many-lies/many-lies-kit/engine/index.html` | 3705 |
+| `katana-kits/many-lies/many-lies-kit/reference/fixes.md` | 1912 |
+| `katana-kits/many-lies/many-lies-kit/reference/template.md` | 1753 |
+| `katana-kits/many-lies/many-lies-kit/scripts/ana.py` | 13102 |
+| `katana-kits/many-lies/many-lies-kit/scripts/edit.py` | 32084 |
+| `katana-kits/many-lies/many-lies-kit/scripts/ml.py` | 69037 |
+| `katana-kits/many-lies/many-lies-kit/scripts/serve.py` | 3163 |
+| `katana-kits/many-lies/many-lies-kit/template/sface.LICENSE.txt` | 11358 |
+| `katana-kits/many-lies/many-lies-kit/template/timeline.json` | 21323 |
+| `katana-kits/many-lies/many-lies-kit/template/yunet.LICENSE.txt` | 1085 |
+| `katana-kits/physical-body/physical-body-kit/assets.json` | 12243 |
+| `katana-kits/physical-body/physical-body-kit/engine/ana.html` | 4948 |
+| `katana-kits/physical-body/physical-body-kit/engine/fx.js` | 35767 |
+| `katana-kits/physical-body/physical-body-kit/engine/index.html` | 4065 |
+| `katana-kits/physical-body/physical-body-kit/references/fixes.md` | 4472 |
+| `katana-kits/physical-body/physical-body-kit/references/template.md` | 4921 |
+| `katana-kits/physical-body/physical-body-kit/scripts/ana.py` | 8701 |
+| `katana-kits/physical-body/physical-body-kit/scripts/edit.py` | 24046 |
+| `katana-kits/physical-body/physical-body-kit/scripts/pb.py` | 69076 |
+| `katana-kits/physical-body/physical-body-kit/scripts/sandbox.sh` | 7202 |
+| `katana-kits/physical-body/physical-body-kit/scripts/serve.py` | 3163 |
+| `katana-kits/physical-body/physical-body-kit/scripts/track.py` | 4561 |
+| `katana-kits/physical-body/physical-body-kit/template/timeline.json` | 30371 |
+| `katana-kits/pink-collage/assets.json` | 17923 |
+| `katana-kits/pink-collage/glow/__init__.py` | 124 |
+| `katana-kits/pink-collage/glow/engine.py` | 19799 |
+| `katana-kits/pink-collage/glow/media.py` | 9424 |
+| `katana-kits/pink-collage/glow/seg.py` | 4211 |
+| `katana-kits/pink-collage/glow/y2k.py` | 41894 |
+| `katana-kits/pink-collage/references/fixes.md` | 3570 |
+| `katana-kits/pink-collage/requirements.txt` | 176 |
+| `katana-kits/pink-collage/scripts/analyze.py` | 6484 |
+| `katana-kits/pink-collage/scripts/cast.py` | 23694 |
+| `katana-kits/pink-collage/scripts/edit.py` | 35541 |
+| `katana-kits/pink-collage/scripts/pc.py` | 52406 |
+| `katana-kits/pink-collage/scripts/qa.py` | 2832 |
+| `katana-kits/pink-collage/template/template.json` | 11901 |
+| `katana-kits/the-boys/LICENSES.txt` | 173 |
+| `katana-kits/the-boys/build.py` | 15924 |
+| `katana-kits/the-boys/timeline.json` | 19254 |
+| `katana-kits/travel-edit/travel-edit-kit/edit28.py` | 28010 |
+| `katana-kits/travel-edit/travel-edit-kit/fonts/OFL-Montserrat.txt` | 4400 |
+| `katana-kits/travel-edit/travel-edit-kit/fonts/OFL-PinyonScript.txt` | 4384 |
+
+## D/E. Komendy — 15 plików, 79 KB
 
 | plik | B |
 |---|---:|
@@ -399,7 +508,7 @@ Rozmiary w bajtach. `raw/workflows/*/SKILL.md` = tekst serwowany przez `get_work
 | `catalogs/shorts-studio-presets.json` | 400 |
 | `catalogs/viral.json` | 24503 |
 
-## G. Oficjalne skille GitHub — 127 plików, 1140 KB
+## G. Oficjalne skille GitHub — 127 plików, 1139 KB
 
 | plik | B |
 |---|---:|
@@ -531,7 +640,7 @@ Rozmiary w bajtach. `raw/workflows/*/SKILL.md` = tekst serwowany przez `get_work
 | `github-skills/scripts/update-check.sh` | 4474 |
 | `github-skills/setup` | 6648 |
 
-## H. Annex: społeczność OSideMedia — 99 plików, 1882 KB
+## H. Annex: społeczność OSideMedia — 99 plików, 1881 KB
 
 | plik | B |
 |---|---:|
@@ -634,4 +743,3 @@ Rozmiary w bajtach. `raw/workflows/*/SKILL.md` = tekst serwowany przez `get_work
 | `community-osidemedia/templates/text-overlays/slogan.md` | 1457 |
 | `community-osidemedia/templates/text-overlays/speech-bubble.md` | 1416 |
 | `community-osidemedia/templates/text-overlays/subtitle.md` | 1449 |
-

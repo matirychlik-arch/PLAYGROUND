@@ -1,0 +1,5 @@
+# pink-collage venv (pc.py setup installs these through the Socket firewall index, exact pins)
+numpy==2.5.3
+opencv-python-headless==5.0.0.93
+pillow==12.3.0
+onnxruntime==1.30.0

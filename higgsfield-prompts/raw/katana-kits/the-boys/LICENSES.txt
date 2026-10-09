@@ -1,0 +1,2 @@
+Fonts: SIL Open Font License 1.1 (Google Fonts: Anton, Bebas Neue, Barlow Condensed, Playfair Display, Inter).
+u2net_human_seg.onnx: from rembg (MIT), U^2-Net (Apache-2.0).

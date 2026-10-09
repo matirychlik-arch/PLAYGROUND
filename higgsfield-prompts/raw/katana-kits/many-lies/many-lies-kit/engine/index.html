@@ -1,0 +1,58 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>many lies compositor</title>
+<style>html,body{margin:0;background:#111;color:#ddd;font:12px monospace}canvas{display:block;max-width:100%;max-height:92vh}#ui{padding:4px 6px}</style>
+</head><body>
+<div id="ui">loading…</div><canvas id="out" width="1440" height="1080"></canvas>
+<script src="fx.js"></script>
+<script>
+// Modes (query string):
+//   ?render=1&from=A&to=B[&plan=plan.json][&q=0.95]  render frames A..B-1 -> POST /frame/NNNNN.jpg, log "render done A-B <secs>"
+//   ?sheet=f1,f2,..&cols=6&name=N[&div=3]            labelled stills -> POST /shot/N.jpg, log "sheet done N"
+//   (none)                                           preview: ←/→ step, shift = 9 frames (one beat), digits+enter jump
+const Q = new URLSearchParams(location.search), ui = document.getElementById('ui'), OUT = document.getElementById('out');
+const post = (u, b) => fetch(u, { method: 'POST', body: b });
+const log = m => post('/log', m);
+const pad = (n, k = 5) => String(n).padStart(k, '0');
+async function jpeg(c, q) { return new Promise(r => c.toBlob(r, 'image/jpeg', q)); }
+(async () => {
+  const plan = await (await fetch(Q.get('plan') || 'plan.json', { cache: 'no-store' })).json();
+  FX.setPlan(plan); await document.fonts.load(`bold 100px Arial`);
+  const W = FX.W, H = FX.H; OUT.width = W; OUT.height = H; const ox = OUT.getContext('2d');
+  if (Q.get('render')) {
+    const a = +Q.get('from') || 0, b = Math.min(plan.nf, +(Q.get('to') || plan.nf)), q = +(Q.get('q') || 0.95), t0 = performance.now();
+    const pend = [];
+    for (let g = a; g < b; g++) {
+      const c = await FX.renderFrame(g);
+      pend.push(jpeg(c, q).then(bl => post('/frame/' + pad(g) + '.jpg', bl)));
+      if (pend.length > 8) await pend.shift();
+      if ((g - a) % 24 === 0) log(`render progress ${a}-${b} at ${g}`);
+    }
+    await Promise.all(pend);
+    await log(`render done ${a}-${b} ${((performance.now() - t0) / 1000).toFixed(1)}`);
+    return;
+  }
+  if (Q.get('sheet')) {
+    const fr = Q.get('sheet').split(',').filter(Boolean).map(Number), cols = +(Q.get('cols') || 6), div = +(Q.get('div') || 3);
+    const tw = Math.round(W / div), th = Math.round(H / div), rows = Math.ceil(fr.length / cols), S = FX.mk(cols * (tw + 4), rows * (th + 4), false);
+    S.x.fillStyle = '#5a5a5a'; S.x.fillRect(0, 0, S.width, S.height); S.x.font = 'bold 15px Arial';
+    for (let i = 0; i < fr.length; i++) {
+      const c = await FX.renderFrame(fr[i]), X = (i % cols) * (tw + 4), Y = Math.floor(i / cols) * (th + 4);
+      S.x.drawImage(c, X, Y, tw, th);
+      const sh = plan.shots.find(s => s.f0 <= fr[i] && fr[i] < s.f1), lab = `${fr[i]} ${sh ? sh.id : ''}`;
+      S.x.fillStyle = '#000'; S.x.fillRect(X, Y, S.x.measureText(lab).width + 8, 19); S.x.fillStyle = '#ff0'; S.x.fillText(lab, X + 4, Y + 15);
+    }
+    await post('/shot/' + (Q.get('name') || 'sheet') + '.jpg', await jpeg(S, 0.9));
+    await log('sheet done ' + (Q.get('name') || 'sheet'));
+    return;
+  }
+  let g = +(Q.get('f') || 0), typed = '';
+  async function show() { ui.textContent = `frame ${g} / ${plan.nf}  (${(g / 24).toFixed(2)} s)`; ox.drawImage(await FX.renderFrame(g), 0, 0); }
+  addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') g = Math.min(plan.nf - 1, g + (e.shiftKey ? 9 : 1)); else if (e.key === 'ArrowLeft') g = Math.max(0, g - (e.shiftKey ? 9 : 1));
+    else if (/^[0-9]$/.test(e.key)) { typed += e.key; return; } else if (e.key === 'Enter' && typed) { g = Math.min(plan.nf - 1, +typed); typed = ''; } else return;
+    show();
+  });
+  show();
+})().catch(e => { ui.textContent = 'ERROR ' + (e && e.stack || e); log('ERROR ' + (e && e.message || e)); });
+</script>
+</body></html>

@@ -1,0 +1,1201 @@
+{
+  "version": 1,
+  "name": "many lies (the dusk boy)",
+  "fps": 24,
+  "w": 1440,
+  "h": 1080,
+  "nf": 366,
+  "bpm": 160,
+  "beat_frames": 9,
+  "music": "music.m4a",
+  "slots": {
+    "eyesA": {
+      "kind": "eyes",
+      "note": "glowing-eyes ECU of the drop (x1, glitch hit)"
+    },
+    "liar": {
+      "kind": "face",
+      "note": "hard stare for LIAR"
+    },
+    "eyesB": {
+      "kind": "eyes",
+      "note": "second eyes ECU (white glow in the original)"
+    },
+    "walk": {
+      "kind": "walk",
+      "note": "long plan: walking / turning in the space, 27 frames"
+    },
+    "wide": {
+      "kind": "wide",
+      "note": "action wide shot (football in the original), 18 frames"
+    },
+    "det1": {
+      "kind": "detail",
+      "note": "hand / object detail under LIES"
+    },
+    "tell": {
+      "kind": "face",
+      "note": "TELL"
+    },
+    "me": {
+      "kind": "face",
+      "note": "ME"
+    },
+    "the": {
+      "kind": "face",
+      "note": "THE"
+    },
+    "truth": {
+      "kind": "profile",
+      "note": "TRUTH over a confrontation"
+    },
+    "strA": {
+      "kind": "medium",
+      "note": "strobe A: person in a dark room"
+    },
+    "strB": {
+      "kind": "eyes",
+      "note": "strobe B: eyes (slow, rate 0.35)"
+    },
+    "fake": {
+      "kind": "profile",
+      "note": "confrontation for FAKE"
+    },
+    "stop": {
+      "kind": "profile",
+      "note": "profiles face to face, STOP LYING"
+    },
+    "knew": {
+      "kind": "face",
+      "note": "angry close-up, YOU KNOW WHAT YOU DID"
+    },
+    "tri1": {
+      "kind": "medium",
+      "note": "triptych panel TRUTH"
+    },
+    "tri2": {
+      "kind": "face",
+      "note": "triptych panel LIES"
+    },
+    "tri3": {
+      "kind": "eyes",
+      "note": "triptych panel SECRETS"
+    },
+    "watch": {
+      "kind": "hero",
+      "note": "frontal close-up WATCH ME"
+    },
+    "g4a": {
+      "kind": "eyes",
+      "note": "2x2 grid"
+    },
+    "g4b": {
+      "kind": "eyes",
+      "note": "2x2 grid"
+    },
+    "g4c": {
+      "kind": "face",
+      "note": "2x2 grid"
+    },
+    "g4d": {
+      "kind": "face",
+      "note": "2x2 grid"
+    },
+    "stackS": {
+      "kind": "medium",
+      "note": "dark medium shot under the text wall, 18 frames"
+    },
+    "det2": {
+      "kind": "detail",
+      "note": "long colour detail (the cut hand), 36 frames, polaroids on top"
+    },
+    "cut1": {
+      "kind": "face",
+      "note": "polaroid 1"
+    },
+    "cut2": {
+      "kind": "face",
+      "note": "polaroid 2"
+    },
+    "cut3": {
+      "kind": "medium",
+      "note": "polaroid 3"
+    },
+    "kn1": {
+      "kind": "bright",
+      "note": "footage inside TRUST NO ONE"
+    },
+    "glowF": {
+      "kind": "face",
+      "note": "inhale shot: stare, 4 frames"
+    },
+    "hit": {
+      "kind": "medium",
+      "note": "the hit: punch + flash, 18 frames"
+    },
+    "say": {
+      "kind": "profile",
+      "note": "shouting profile, SAY IT AGAIN"
+    },
+    "kn2": {
+      "kind": "bright",
+      "note": "footage inside LIES on red"
+    },
+    "g90": {
+      "kind": "eyes",
+      "note": "3x3 grid"
+    },
+    "g91": {
+      "kind": "face",
+      "note": "3x3 grid"
+    },
+    "g92": {
+      "kind": "eyes",
+      "note": "3x3 grid"
+    },
+    "g93": {
+      "kind": "face",
+      "note": "3x3 grid"
+    },
+    "g94": {
+      "kind": "eyes",
+      "note": "3x3 grid"
+    },
+    "g95": {
+      "kind": "face",
+      "note": "3x3 grid"
+    },
+    "g96": {
+      "kind": "eyes",
+      "note": "3x3 grid"
+    },
+    "g97": {
+      "kind": "face",
+      "note": "3x3 grid"
+    },
+    "g98": {
+      "kind": "eyes",
+      "note": "3x3 grid"
+    },
+    "hero1": {
+      "kind": "hero",
+      "note": "EYES DON'T LIE close-up, 18 frames"
+    },
+    "bLiar": {
+      "kind": "face",
+      "note": "burst LIAR"
+    },
+    "bFake": {
+      "kind": "profile",
+      "note": "burst FAKE"
+    },
+    "bTruth": {
+      "kind": "eyes",
+      "note": "burst TRUTH?"
+    },
+    "know": {
+      "kind": "medium",
+      "note": "I KNOW. medium, colour"
+    },
+    "hero2": {
+      "kind": "hero",
+      "note": "SO MANY LIES hero close-up, colour, 36 frames"
+    },
+    "back": {
+      "kind": "back",
+      "note": "walking away / turning away (finale + negative)"
+    }
+  },
+  "shots": [
+    {
+      "id": "x1",
+      "f0": 0,
+      "f1": 2,
+      "slot": "eyesA",
+      "off": 0,
+      "g": "pop",
+      "zr": [1.0, 1.03],
+      "flash": [0.6, 0.2]
+    },
+    {
+      "id": "x2",
+      "f0": 2,
+      "f1": 3,
+      "solid": 1.0
+    },
+    {
+      "id": "x3",
+      "f0": 3,
+      "f1": 5,
+      "slot": "liar",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.02]
+    },
+    {
+      "id": "x4",
+      "f0": 5,
+      "f1": 7,
+      "slot": "eyesB",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.0]
+    },
+    {
+      "id": "x5",
+      "f0": 7,
+      "f1": 9,
+      "slot": "eyesA",
+      "off": 4,
+      "g": "pop",
+      "zr": [1.0, 1.0],
+      "glitch": [1]
+    },
+    {
+      "id": "walk",
+      "f0": 9,
+      "f1": 36,
+      "slot": "walk",
+      "off": 0,
+      "g": "color",
+      "zr": [1.0, 1.08]
+    },
+    {
+      "id": "wide",
+      "f0": 36,
+      "f1": 54,
+      "slot": "wide",
+      "off": 0,
+      "g": "color",
+      "zr": [1.0, 1.04]
+    },
+    {
+      "id": "det1",
+      "f0": 54,
+      "f1": 63,
+      "slot": "det1",
+      "off": 0,
+      "g": "color",
+      "zr": [1.0, 1.05]
+    },
+    {
+      "id": "tell",
+      "f0": 63,
+      "f1": 66,
+      "slot": "tell",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.0]
+    },
+    {
+      "id": "me",
+      "f0": 66,
+      "f1": 68,
+      "slot": "me",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.0]
+    },
+    {
+      "id": "the",
+      "f0": 68,
+      "f1": 70,
+      "slot": "the",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.0]
+    },
+    {
+      "id": "wh1",
+      "f0": 70,
+      "f1": 71,
+      "solid": 1.0
+    },
+    {
+      "id": "truth",
+      "f0": 71,
+      "f1": 72,
+      "slot": "truth",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.0]
+    },
+    {
+      "id": "s0",
+      "f0": 72,
+      "f1": 74,
+      "slot": "strA",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.0],
+      "flash": [0.7, 0.25]
+    },
+    {
+      "id": "s1",
+      "f0": 74,
+      "f1": 76,
+      "slot": "strB",
+      "off": 1,
+      "g": "pop",
+      "zr": [1.0, 1.0]
+    },
+    {
+      "id": "s2",
+      "f0": 76,
+      "f1": 78,
+      "slot": "strA",
+      "off": 4,
+      "g": "bw",
+      "zr": [1.0, 1.0],
+      "flash": [0.7, 0.25]
+    },
+    {
+      "id": "s3",
+      "f0": 78,
+      "f1": 80,
+      "slot": "strB",
+      "off": 2,
+      "g": "pop",
+      "zr": [1.0, 1.0]
+    },
+    {
+      "id": "s4",
+      "f0": 80,
+      "f1": 82,
+      "slot": "strA",
+      "off": 8,
+      "g": "bw",
+      "zr": [1.0, 1.0],
+      "flash": [0.7, 0.25]
+    },
+    {
+      "id": "s5",
+      "f0": 82,
+      "f1": 84,
+      "slot": "strB",
+      "off": 4,
+      "g": "pop",
+      "zr": [1.0, 1.0]
+    },
+    {
+      "id": "s6",
+      "f0": 84,
+      "f1": 86,
+      "slot": "strA",
+      "off": 12,
+      "g": "bw",
+      "zr": [1.0, 1.0],
+      "flash": [0.7, 0.25]
+    },
+    {
+      "id": "s7",
+      "f0": 86,
+      "f1": 88,
+      "slot": "strB",
+      "off": 5,
+      "g": "pop",
+      "zr": [1.0, 1.0]
+    },
+    {
+      "id": "s8",
+      "f0": 88,
+      "f1": 90,
+      "slot": "strA",
+      "off": 16,
+      "g": "bw",
+      "zr": [1.0, 1.0],
+      "flash": [0.7, 0.25]
+    },
+    {
+      "id": "fake",
+      "f0": 90,
+      "f1": 99,
+      "slot": "fake",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.0],
+      "punch": 0.06
+    },
+    {
+      "id": "stop",
+      "f0": 99,
+      "f1": 108,
+      "slot": "stop",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.04]
+    },
+    {
+      "id": "knew",
+      "f0": 108,
+      "f1": 117,
+      "slot": "knew",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.05]
+    },
+    {
+      "id": "tri",
+      "f0": 117,
+      "f1": 126,
+      "collage": [
+        {
+          "slot": "tri1",
+          "rect": [0, 0, 476, 1080],
+          "at": 0,
+          "g": "bw"
+        },
+        {
+          "slot": "tri2",
+          "rect": [482, 0, 476, 1080],
+          "at": 3,
+          "g": "bw"
+        },
+        {
+          "slot": "tri3",
+          "rect": [964, 0, 476, 1080],
+          "at": 6,
+          "g": "bw"
+        }
+      ]
+    },
+    {
+      "id": "watch",
+      "f0": 126,
+      "f1": 135,
+      "slot": "watch",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.04]
+    },
+    {
+      "id": "grid4",
+      "f0": 135,
+      "f1": 144,
+      "collage": [
+        {
+          "slot": "g4a",
+          "rect": [0, 0, 717, 537],
+          "at": 0,
+          "g": "pop"
+        },
+        {
+          "slot": "g4b",
+          "rect": [723, 0, 717, 537],
+          "at": 2,
+          "g": "bw"
+        },
+        {
+          "slot": "g4c",
+          "rect": [0, 543, 717, 537],
+          "at": 4,
+          "g": "bw"
+        },
+        {
+          "slot": "g4d",
+          "rect": [723, 543, 717, 537],
+          "at": 6,
+          "g": "bw"
+        }
+      ]
+    },
+    {
+      "id": "stack",
+      "f0": 144,
+      "f1": 162,
+      "slot": "stackS",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.05]
+    },
+    {
+      "id": "det2",
+      "f0": 162,
+      "f1": 198,
+      "slot": "det2",
+      "off": 0,
+      "g": "color",
+      "zr": [1.0, 1.1]
+    },
+    {
+      "id": "kn1",
+      "f0": 198,
+      "f1": 207,
+      "slot": "kn1",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.1, 1.1],
+      "knock": {
+        "lines": [
+          ["TRUST", 320],
+          ["NO", 320],
+          ["ONE", 320]
+        ],
+        "bg": [0.0, 0.0, 0.0]
+      }
+    },
+    {
+      "id": "wh2",
+      "f0": 207,
+      "f1": 209,
+      "solid": 1.0
+    },
+    {
+      "id": "glow",
+      "f0": 209,
+      "f1": 213,
+      "slot": "glowF",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.0]
+    },
+    {
+      "id": "bk1",
+      "f0": 213,
+      "f1": 216,
+      "solid": 0.0
+    },
+    {
+      "id": "hit",
+      "f0": 216,
+      "f1": 234,
+      "slot": "hit",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.05],
+      "flash": [0.85, 0.45, 0.18],
+      "punch": 0.08
+    },
+    {
+      "id": "say",
+      "f0": 234,
+      "f1": 243,
+      "slot": "say",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.0]
+    },
+    {
+      "id": "kn2",
+      "f0": 243,
+      "f1": 252,
+      "slot": "kn2",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.1, 1.1],
+      "knock": {
+        "lines": [["LIES", 500]],
+        "bg": [0.88, 0.07, 0.09]
+      }
+    },
+    {
+      "id": "grid9",
+      "f0": 252,
+      "f1": 270,
+      "collage": [
+        {
+          "slot": "g94",
+          "rect": [482, 362, 476, 356],
+          "at": 0,
+          "g": "bw"
+        },
+        {
+          "slot": "g90",
+          "rect": [0, 0, 476, 356],
+          "at": 2,
+          "g": "bw"
+        },
+        {
+          "slot": "g98",
+          "rect": [964, 724, 476, 356],
+          "at": 3,
+          "g": "bw"
+        },
+        {
+          "slot": "g92",
+          "rect": [964, 0, 476, 356],
+          "at": 4,
+          "g": "bw"
+        },
+        {
+          "slot": "g96",
+          "rect": [0, 724, 476, 356],
+          "at": 6,
+          "g": "bw"
+        },
+        {
+          "slot": "g91",
+          "rect": [482, 0, 476, 356],
+          "at": 7,
+          "g": "bw"
+        },
+        {
+          "slot": "g97",
+          "rect": [482, 724, 476, 356],
+          "at": 8,
+          "g": "bw"
+        },
+        {
+          "slot": "g93",
+          "rect": [0, 362, 476, 356],
+          "at": 10,
+          "g": "bw"
+        },
+        {
+          "slot": "g95",
+          "rect": [964, 362, 476, 356],
+          "at": 11,
+          "g": "bw"
+        }
+      ]
+    },
+    {
+      "id": "hero1",
+      "f0": 270,
+      "f1": 288,
+      "slot": "hero1",
+      "off": 0,
+      "g": "pop",
+      "zr": [1.0, 1.06]
+    },
+    {
+      "id": "bliar",
+      "f0": 288,
+      "f1": 290,
+      "slot": "bLiar",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.0],
+      "flash": [0.5, 0.1]
+    },
+    {
+      "id": "wh3",
+      "f0": 290,
+      "f1": 291,
+      "solid": 1.0
+    },
+    {
+      "id": "bfake",
+      "f0": 291,
+      "f1": 293,
+      "slot": "bFake",
+      "off": 0,
+      "g": "bw",
+      "zr": [1.0, 1.0]
+    },
+    {
+      "id": "btruth",
+      "f0": 293,
+      "f1": 297,
+      "slot": "bTruth",
+      "off": 0,
+      "g": "pop",
+      "zr": [1.0, 1.04],
+      "glitch": [0]
+    },
+    {
+      "id": "know",
+      "f0": 297,
+      "f1": 306,
+      "slot": "know",
+      "off": 0,
+      "g": "color",
+      "zr": [1.0, 1.04]
+    },
+    {
+      "id": "hero2",
+      "f0": 306,
+      "f1": 342,
+      "slot": "hero2",
+      "off": 0,
+      "g": "color",
+      "zr": [1.0, 1.1]
+    },
+    {
+      "id": "back",
+      "f0": 342,
+      "f1": 357,
+      "slot": "back",
+      "off": 0,
+      "g": "color",
+      "zr": [1.0, 1.03]
+    },
+    {
+      "id": "neg",
+      "f0": 357,
+      "f1": 360,
+      "slot": "back",
+      "off": 15,
+      "g": "color",
+      "zr": [1.03, 1.03],
+      "neg": true
+    },
+    {
+      "id": "end",
+      "f0": 360,
+      "f1": 366,
+      "solid": 0.0
+    }
+  ],
+  "ev": [
+    {
+      "type": "word",
+      "f0": 3,
+      "f1": 5,
+      "text": "LIAR",
+      "size": 240
+    },
+    {
+      "type": "marquee",
+      "f0": 9,
+      "f1": 36,
+      "rows": [
+        {
+          "y": 0.13,
+          "v": -14,
+          "size": 64,
+          "text": "TRUST NO ONE  •  "
+        },
+        {
+          "y": 0.87,
+          "v": 10,
+          "size": 64,
+          "text": "SO MANY LIES  ◦  ",
+          "outline": 2,
+          "alpha": 0.85
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "f0": 9,
+      "f1": 36,
+      "label": "DON'T LOOK BACK"
+    },
+    {
+      "type": "word",
+      "f0": 36,
+      "f1": 45,
+      "text": "SO",
+      "size": 260
+    },
+    {
+      "type": "slices",
+      "f0": 36,
+      "f1": 40
+    },
+    {
+      "type": "word",
+      "f0": 45,
+      "f1": 54,
+      "text": "MANY",
+      "size": 260
+    },
+    {
+      "type": "word",
+      "f0": 54,
+      "f1": 63,
+      "text": "LIES",
+      "size": 240,
+      "box": [0.88, 0.07, 0.09]
+    },
+    {
+      "type": "word",
+      "f0": 63,
+      "f1": 66,
+      "text": "TELL",
+      "size": 220,
+      "y": 0.52
+    },
+    {
+      "type": "word",
+      "f0": 66,
+      "f1": 68,
+      "text": "ME",
+      "size": 220,
+      "y": 0.52
+    },
+    {
+      "type": "word",
+      "f0": 68,
+      "f1": 70,
+      "text": "THE",
+      "size": 220,
+      "y": 0.52
+    },
+    {
+      "type": "word",
+      "f0": 70,
+      "f1": 71,
+      "text": "TRUTH",
+      "size": 220,
+      "y": 0.52,
+      "color": [0.0, 0.0, 0.0],
+      "shadow": 0
+    },
+    {
+      "type": "word",
+      "f0": 71,
+      "f1": 72,
+      "text": "TRUTH",
+      "size": 220,
+      "y": 0.52
+    },
+    {
+      "type": "word",
+      "f0": 72,
+      "f1": 90,
+      "text": "I SEE THROUGH YOU",
+      "size": 64,
+      "y": 0.86
+    },
+    {
+      "type": "word",
+      "f0": 90,
+      "f1": 99,
+      "text": "FAKE",
+      "size": 300,
+      "y": 0.52,
+      "outline": 5,
+      "shadow": 0
+    },
+    {
+      "type": "slices",
+      "f0": 90,
+      "f1": 94
+    },
+    {
+      "type": "shake",
+      "f0": 90,
+      "f1": 94
+    },
+    {
+      "type": "counter",
+      "f0": 90,
+      "f1": 117,
+      "label": "LIES",
+      "n0": 1,
+      "rate": 13
+    },
+    {
+      "type": "counter",
+      "f0": 117,
+      "f1": 162,
+      "label": "LIES",
+      "n0": 361,
+      "rate": 13
+    },
+    {
+      "type": "lower",
+      "f0": 99,
+      "f1": 108,
+      "text": "STOP LYING",
+      "size": 58,
+      "y": 0.8
+    },
+    {
+      "type": "lower",
+      "f0": 108,
+      "f1": 117,
+      "text": "YOU KNOW WHAT YOU DID",
+      "size": 58,
+      "y": 0.8
+    },
+    {
+      "type": "labels",
+      "f0": 117,
+      "f1": 126,
+      "items": [
+        ["TRUTH", 40, 238, 988, 0, [0.88, 0.07, 0.09]],
+        ["LIES", 40, 720, 988, 3, [0.88, 0.07, 0.09]],
+        ["SECRETS", 40, 1202, 988, 6, [0.88, 0.07, 0.09]]
+      ]
+    },
+    {
+      "type": "word",
+      "f0": 126,
+      "f1": 135,
+      "text": "WATCH ME",
+      "size": 108,
+      "y": 0.84
+    },
+    {
+      "type": "lower",
+      "f0": 136,
+      "f1": 144,
+      "text": "EYES DON'T LIE",
+      "size": 60,
+      "y": 0.5
+    },
+    {
+      "type": "stack",
+      "f0": 144,
+      "f1": 162,
+      "texts": [
+        "TRUST NO ONE",
+        "NOTHING IS REAL",
+        "SAY IT AGAIN",
+        "BEHIND THE EYES",
+        "NO MORE SECRETS",
+        "SO MANY LIES"
+      ]
+    },
+    {
+      "type": "wipe",
+      "f0": 159,
+      "f1": 162
+    },
+    {
+      "type": "slices",
+      "f0": 162,
+      "f1": 166
+    },
+    {
+      "type": "leak",
+      "f0": 166,
+      "f1": 198,
+      "x0": -0.3,
+      "x1": 0.5,
+      "y": 0.25,
+      "amt": 0.55,
+      "color": [1.0, 0.22, 0.08]
+    },
+    {
+      "type": "lower",
+      "f0": 164,
+      "f1": 198,
+      "text": "THE TRUTH HURTS",
+      "size": 50,
+      "y": 0.067
+    },
+    {
+      "type": "cutouts",
+      "f0": 171,
+      "f1": 198,
+      "panels": [
+        {
+          "slot": "cut1",
+          "rect": [100, 80, 390, 290],
+          "at": 0,
+          "g": "bw",
+          "border": 12,
+          "rot": -4,
+          "shadow": true
+        },
+        {
+          "slot": "cut2",
+          "rect": [960, 330, 400, 300],
+          "at": 9,
+          "g": "bw",
+          "border": 12,
+          "rot": 5,
+          "shadow": true
+        },
+        {
+          "slot": "cut3",
+          "rect": [180, 680, 390, 290],
+          "at": 18,
+          "g": "bw",
+          "border": 12,
+          "rot": -3,
+          "shadow": true
+        }
+      ]
+    },
+    {
+      "type": "word",
+      "f0": 213,
+      "f1": 216,
+      "text": "WHO ARE YOU?",
+      "size": 90,
+      "y": 0.5,
+      "shadow": 0
+    },
+    {
+      "type": "slices",
+      "f0": 216,
+      "f1": 220
+    },
+    {
+      "type": "marquee",
+      "f0": 216,
+      "f1": 234,
+      "rows": [
+        {
+          "y": 0.118,
+          "v": -8,
+          "size": 38,
+          "text": "NO MORE LIES  •  "
+        },
+        {
+          "y": 0.8,
+          "v": -12,
+          "size": 80,
+          "text": "BURN IT ALL DOWN  •  ",
+          "color": [0.88, 0.07, 0.09]
+        }
+      ]
+    },
+    {
+      "type": "lower",
+      "f0": 234,
+      "f1": 243,
+      "text": "SAY IT AGAIN",
+      "size": 58,
+      "y": 0.8
+    },
+    {
+      "type": "lower",
+      "f0": 256,
+      "f1": 270,
+      "text": "NOTHING IS REAL",
+      "size": 60,
+      "y": 0.5
+    },
+    {
+      "type": "word",
+      "f0": 270,
+      "f1": 276,
+      "text": "EYES",
+      "size": 88,
+      "y": 0.85
+    },
+    {
+      "type": "word",
+      "f0": 276,
+      "f1": 282,
+      "text": "EYES DON'T",
+      "size": 88,
+      "y": 0.85
+    },
+    {
+      "type": "word",
+      "f0": 282,
+      "f1": 288,
+      "text": "EYES DON'T LIE",
+      "size": 88,
+      "y": 0.85
+    },
+    {
+      "type": "word",
+      "f0": 288,
+      "f1": 290,
+      "text": "LIAR",
+      "size": 240
+    },
+    {
+      "type": "word",
+      "f0": 291,
+      "f1": 293,
+      "text": "FAKE",
+      "size": 300,
+      "y": 0.52,
+      "outline": 5,
+      "shadow": 0
+    },
+    {
+      "type": "word",
+      "f0": 293,
+      "f1": 297,
+      "text": "TRUTH?",
+      "size": 220
+    },
+    {
+      "type": "word",
+      "f0": 297,
+      "f1": 306,
+      "text": "I KNOW.",
+      "size": 60,
+      "y": 0.88
+    },
+    {
+      "type": "wipe",
+      "f0": 303,
+      "f1": 306
+    },
+    {
+      "type": "slices",
+      "f0": 306,
+      "f1": 310
+    },
+    {
+      "type": "marquee",
+      "f0": 306,
+      "f1": 342,
+      "rows": [
+        {
+          "y": 0.03,
+          "v": -8,
+          "size": 36,
+          "text": "TRUST NO ONE  •  ",
+          "color": [0.88, 0.07, 0.09]
+        }
+      ]
+    },
+    {
+      "type": "leak",
+      "f0": 306,
+      "f1": 342,
+      "x0": -0.25,
+      "x1": 0.2,
+      "y": 0.4,
+      "amt": 0.6,
+      "color": [1.0, 0.18, 0.1]
+    },
+    {
+      "type": "kinetic",
+      "f0": 306,
+      "f1": 342,
+      "lines": [
+        ["SO", 120, 0.62, "B", 0, null],
+        ["MANY", 120, 0.74, "B", 10, null],
+        ["LIES", 110, 0.87, "B", 19, [0.88, 0.07, 0.09]]
+      ]
+    },
+    {
+      "type": "word",
+      "f0": 342,
+      "f1": 357,
+      "text": "SO MANY LIES.",
+      "size": 56,
+      "y": 0.5
+    }
+  ],
+  "rgb": {
+    "0": 10,
+    "1": 6,
+    "7": 8,
+    "8": 12,
+    "63": 6,
+    "64": 4,
+    "66": 6,
+    "68": 6,
+    "72": 14,
+    "73": 8,
+    "90": 14,
+    "91": 8,
+    "117": 10,
+    "135": 8,
+    "216": 14,
+    "217": 10,
+    "218": 6,
+    "252": 8,
+    "288": 12,
+    "289": 8,
+    "293": 10,
+    "297": 8,
+    "357": 12,
+    "358": 8,
+    "359": 6
+  },
+  "scan": [
+    [0, 9],
+    [288, 297]
+  ],
+  "qa_frames": [
+    0, 2, 3, 5, 7, 11, 19, 38, 43, 47, 56, 57, 64, 65, 66, 68, 70, 71, 72, 73, 74, 76, 78, 80, 82,
+    84, 86, 88, 92, 93, 101, 102, 110, 111, 119, 120, 128, 129, 138, 146, 151, 161, 164, 166, 168,
+    173, 176, 201, 207, 210, 214, 215, 218, 223, 236, 237, 246, 258, 259, 272, 277, 278, 284, 288,
+    290, 291, 293, 294, 295, 299, 300, 305, 308, 320, 344, 348, 358, 362
+  ]
+}

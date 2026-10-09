@@ -1,0 +1,726 @@
+{
+  "about": "Pink Collage template = the Princess Glow Up Y2K aura edit, delivered cut (princess.mp4): timeline frames 114..908",
+  "width": 1080,
+  "height": 1080,
+  "fps": 60,
+  "frames": 795,
+  "duration": 13.25,
+  "timeline_n0": 114,
+  "bpm": 136.15,
+  "drops_s": [0.0308, 7.0818],
+  "slots": [
+    {
+      "phrase": "A",
+      "name": "drop",
+      "f0": 0,
+      "f1": 12,
+      "shows": ["drop"]
+    },
+    {
+      "phrase": "A",
+      "name": "dots",
+      "f0": 12,
+      "f1": 14,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "poster",
+      "f0": 14,
+      "f1": 48,
+      "shows": ["poster"]
+    },
+    {
+      "phrase": "A",
+      "name": "dip",
+      "f0": 48,
+      "f1": 50,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "whip",
+      "f0": 50,
+      "f1": 56,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "photo",
+      "f0": 56,
+      "f1": 71,
+      "shows": ["photo"]
+    },
+    {
+      "phrase": "A",
+      "name": "pix",
+      "f0": 71,
+      "f1": 72,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "darkblur",
+      "f0": 72,
+      "f1": 74,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "collage",
+      "f0": 74,
+      "f1": 113,
+      "shows": ["col_frame", "col_cut"]
+    },
+    {
+      "phrase": "A",
+      "name": "whipW",
+      "f0": 113,
+      "f1": 116,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "square",
+      "f0": 116,
+      "f1": 125,
+      "shows": ["square"]
+    },
+    {
+      "phrase": "A",
+      "name": "closeup",
+      "f0": 125,
+      "f1": 156,
+      "shows": ["square"]
+    },
+    {
+      "phrase": "A",
+      "name": "blurC",
+      "f0": 156,
+      "f1": 158,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "starflash",
+      "f0": 158,
+      "f1": 161,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "card1",
+      "f0": 161,
+      "f1": 174,
+      "shows": ["card1"]
+    },
+    {
+      "phrase": "A",
+      "name": "mesh",
+      "f0": 174,
+      "f1": 176,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "whip2",
+      "f0": 176,
+      "f1": 180,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "card2",
+      "f0": 180,
+      "f1": 200,
+      "shows": ["card2", "card1"]
+    },
+    {
+      "phrase": "A",
+      "name": "bars",
+      "f0": 200,
+      "f1": 203,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "textcu",
+      "f0": 203,
+      "f1": 224,
+      "shows": ["text_cu"]
+    },
+    {
+      "phrase": "A",
+      "name": "nametype",
+      "f0": 224,
+      "f1": 228,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "namebold",
+      "f0": 228,
+      "f1": 233,
+      "shows": ["name_bg"]
+    },
+    {
+      "phrase": "A",
+      "name": "close1",
+      "f0": 233,
+      "f1": 249,
+      "shows": ["close1"]
+    },
+    {
+      "phrase": "A",
+      "name": "whip3",
+      "f0": 249,
+      "f1": 254,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "rack",
+      "f0": 254,
+      "f1": 267,
+      "shows": ["rack"]
+    },
+    {
+      "phrase": "A",
+      "name": "pixbar",
+      "f0": 267,
+      "f1": 272,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "slices",
+      "f0": 272,
+      "f1": 275,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "oval",
+      "f0": 275,
+      "f1": 302,
+      "shows": ["oval_bg", "oval_cut"]
+    },
+    {
+      "phrase": "A",
+      "name": "blur4",
+      "f0": 302,
+      "f1": 305,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "pix4",
+      "f0": 305,
+      "f1": 306,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "dark4",
+      "f0": 306,
+      "f1": 308,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "face",
+      "f0": 308,
+      "f1": 329,
+      "shows": ["face"]
+    },
+    {
+      "phrase": "A",
+      "name": "blur5",
+      "f0": 329,
+      "f1": 330,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "inset",
+      "f0": 330,
+      "f1": 347,
+      "shows": ["face", "inset"]
+    },
+    {
+      "phrase": "A",
+      "name": "pix5",
+      "f0": 347,
+      "f1": 348,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "dark5",
+      "f0": 348,
+      "f1": 350,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "collage2",
+      "f0": 350,
+      "f1": 372,
+      "shows": ["face2", "face3", "inset2"]
+    },
+    {
+      "phrase": "A",
+      "name": "pinkwhip",
+      "f0": 372,
+      "f1": 374,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "bigtext",
+      "f0": 374,
+      "f1": 404,
+      "shows": []
+    },
+    {
+      "phrase": "A",
+      "name": "black",
+      "f0": 404,
+      "f1": 424,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "drop",
+      "f0": 424,
+      "f1": 436,
+      "shows": ["drop"]
+    },
+    {
+      "phrase": "B",
+      "name": "dots",
+      "f0": 436,
+      "f1": 438,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "poster",
+      "f0": 438,
+      "f1": 472,
+      "shows": ["poster"]
+    },
+    {
+      "phrase": "B",
+      "name": "dip",
+      "f0": 472,
+      "f1": 474,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "whip",
+      "f0": 474,
+      "f1": 479,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "photo",
+      "f0": 479,
+      "f1": 494,
+      "shows": ["photo"]
+    },
+    {
+      "phrase": "B",
+      "name": "pix",
+      "f0": 494,
+      "f1": 496,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "darkblur",
+      "f0": 496,
+      "f1": 498,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "collage",
+      "f0": 498,
+      "f1": 536,
+      "shows": ["col_frame", "col_cut"]
+    },
+    {
+      "phrase": "B",
+      "name": "whipW",
+      "f0": 536,
+      "f1": 539,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "square",
+      "f0": 539,
+      "f1": 548,
+      "shows": ["square"]
+    },
+    {
+      "phrase": "B",
+      "name": "closeup",
+      "f0": 548,
+      "f1": 580,
+      "shows": ["square"]
+    },
+    {
+      "phrase": "B",
+      "name": "blurC",
+      "f0": 580,
+      "f1": 582,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "starflash",
+      "f0": 582,
+      "f1": 584,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "card1",
+      "f0": 584,
+      "f1": 598,
+      "shows": ["card1"]
+    },
+    {
+      "phrase": "B",
+      "name": "mesh",
+      "f0": 598,
+      "f1": 600,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "whip2",
+      "f0": 600,
+      "f1": 604,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "card2",
+      "f0": 604,
+      "f1": 623,
+      "shows": ["card2", "card1"]
+    },
+    {
+      "phrase": "B",
+      "name": "bars",
+      "f0": 623,
+      "f1": 627,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "textcu",
+      "f0": 627,
+      "f1": 648,
+      "shows": ["text_cu"]
+    },
+    {
+      "phrase": "B",
+      "name": "nametype",
+      "f0": 648,
+      "f1": 652,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "namebold",
+      "f0": 652,
+      "f1": 657,
+      "shows": ["name_bg"]
+    },
+    {
+      "phrase": "B",
+      "name": "close1",
+      "f0": 657,
+      "f1": 673,
+      "shows": ["close1"]
+    },
+    {
+      "phrase": "B",
+      "name": "whip3",
+      "f0": 673,
+      "f1": 678,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "rack",
+      "f0": 678,
+      "f1": 691,
+      "shows": ["rack"]
+    },
+    {
+      "phrase": "B",
+      "name": "pixbar",
+      "f0": 691,
+      "f1": 696,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "slices",
+      "f0": 696,
+      "f1": 698,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "oval",
+      "f0": 698,
+      "f1": 726,
+      "shows": ["oval_bg", "oval_cut"]
+    },
+    {
+      "phrase": "B",
+      "name": "blur4",
+      "f0": 726,
+      "f1": 728,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "pix4",
+      "f0": 728,
+      "f1": 730,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "dark4",
+      "f0": 730,
+      "f1": 732,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "face",
+      "f0": 732,
+      "f1": 752,
+      "shows": ["face"]
+    },
+    {
+      "phrase": "B",
+      "name": "blur5",
+      "f0": 752,
+      "f1": 754,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "inset",
+      "f0": 754,
+      "f1": 770,
+      "shows": ["face", "inset"]
+    },
+    {
+      "phrase": "B",
+      "name": "pix5",
+      "f0": 770,
+      "f1": 772,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "dark5",
+      "f0": 772,
+      "f1": 774,
+      "shows": []
+    },
+    {
+      "phrase": "B",
+      "name": "collage2",
+      "f0": 774,
+      "f1": 795,
+      "shows": ["face2", "face3", "inset2"]
+    }
+  ],
+  "review": [
+    {
+      "phrase": "A",
+      "name": "drop",
+      "f": 6
+    },
+    {
+      "phrase": "A",
+      "name": "poster",
+      "f": 31
+    },
+    {
+      "phrase": "A",
+      "name": "photo",
+      "f": 63
+    },
+    {
+      "phrase": "A",
+      "name": "collage",
+      "f": 93
+    },
+    {
+      "phrase": "A",
+      "name": "square",
+      "f": 120
+    },
+    {
+      "phrase": "A",
+      "name": "closeup",
+      "f": 140
+    },
+    {
+      "phrase": "A",
+      "name": "card1",
+      "f": 167
+    },
+    {
+      "phrase": "A",
+      "name": "card2",
+      "f": 190
+    },
+    {
+      "phrase": "A",
+      "name": "textcu",
+      "f": 213
+    },
+    {
+      "phrase": "A",
+      "name": "namebold",
+      "f": 230
+    },
+    {
+      "phrase": "A",
+      "name": "close1",
+      "f": 241
+    },
+    {
+      "phrase": "A",
+      "name": "rack",
+      "f": 260
+    },
+    {
+      "phrase": "A",
+      "name": "oval",
+      "f": 288
+    },
+    {
+      "phrase": "A",
+      "name": "face",
+      "f": 318
+    },
+    {
+      "phrase": "A",
+      "name": "inset",
+      "f": 338
+    },
+    {
+      "phrase": "A",
+      "name": "collage2",
+      "f": 361
+    },
+    {
+      "phrase": "A",
+      "name": "bigtext",
+      "f": 389
+    },
+    {
+      "phrase": "B",
+      "name": "drop",
+      "f": 430
+    },
+    {
+      "phrase": "B",
+      "name": "poster",
+      "f": 455
+    },
+    {
+      "phrase": "B",
+      "name": "photo",
+      "f": 486
+    },
+    {
+      "phrase": "B",
+      "name": "collage",
+      "f": 517
+    },
+    {
+      "phrase": "B",
+      "name": "square",
+      "f": 543
+    },
+    {
+      "phrase": "B",
+      "name": "closeup",
+      "f": 564
+    },
+    {
+      "phrase": "B",
+      "name": "card1",
+      "f": 591
+    },
+    {
+      "phrase": "B",
+      "name": "card2",
+      "f": 613
+    },
+    {
+      "phrase": "B",
+      "name": "textcu",
+      "f": 637
+    },
+    {
+      "phrase": "B",
+      "name": "namebold",
+      "f": 654
+    },
+    {
+      "phrase": "B",
+      "name": "close1",
+      "f": 665
+    },
+    {
+      "phrase": "B",
+      "name": "rack",
+      "f": 684
+    },
+    {
+      "phrase": "B",
+      "name": "oval",
+      "f": 712
+    },
+    {
+      "phrase": "B",
+      "name": "face",
+      "f": 742
+    },
+    {
+      "phrase": "B",
+      "name": "inset",
+      "f": 762
+    },
+    {
+      "phrase": "B",
+      "name": "collage2",
+      "f": 784
+    }
+  ],
+  "qa": [
+    0, 6, 13, 31, 49, 53, 63, 71, 73, 93, 114, 120, 140, 157, 159, 167, 175, 178, 190, 201, 213,
+    226, 230, 241, 251, 260, 269, 273, 288, 303, 305, 307, 318, 329, 338, 347, 349, 361, 373, 389,
+    414, 430, 437, 455, 473, 476, 486, 495, 497, 517, 537, 543, 564, 581, 583, 591, 599, 602, 613,
+    625, 637, 650, 654, 665, 675, 684, 693, 697, 712, 727, 729, 731, 742, 753, 762, 771, 773, 784,
+    794
+  ]
+}

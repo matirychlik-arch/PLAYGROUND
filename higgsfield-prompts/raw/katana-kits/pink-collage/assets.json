@@ -1,0 +1,426 @@
+{
+  "version": 1,
+  "about": "Binary assets of the pink-collage workflow, all on the Higgsfield CDN. \"archive\": the template music and the QA reference frames as one tar.gz, extracted into the kit (only the \"files\" it lists). \"downloads\": fonts, ONNX models and (Linux only) the opencv wheel, each gzip-compressed on the CDN, decompressed into the cache dir (PC_HOME, default ~/.cache/pink-collage); \"source\" names the upstream origin. pc.py assets downloads and verifies everything (sha256 of the .gz and of the file); nothing else is fetched at run time.",
+  "archive": {
+    "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_34sAKim8cOqbidZN9XoRhYrfbCs/a0f00dea-be98-4f56-837b-5e6edd74bd91.gz",
+    "media_id": "a0f00dea-be98-4f56-837b-5e6edd74bd91",
+    "format": "tar.gz",
+    "sha256": "e2042f3c93f468124b637df30c2f9a71da6f794e3c71fc83cbe873c6cca83dab",
+    "bytes": 1865928
+  },
+  "files": {
+    "template/music.m4a": {
+      "sha256": "e8b6ff47b90a50738f4c2c2a364e255ca51ce8c010a673289b75b00f175d946e",
+      "bytes": 536559
+    },
+    "template/ref/000.jpg": {
+      "sha256": "a99e11cac54102b8389aaa0aa1bc537ca487780d95a2688284608a3beff2ab62",
+      "bytes": 9440
+    },
+    "template/ref/006.jpg": {
+      "sha256": "90780cb5402318546938523b17ba55c2c984c7170f880ad51eb808333cc150e5",
+      "bytes": 15016
+    },
+    "template/ref/013.jpg": {
+      "sha256": "599eafa4da86dfb69114e38ddd7ccfafd7ce3b3844cf793dde07ba1498cf9123",
+      "bytes": 46476
+    },
+    "template/ref/031.jpg": {
+      "sha256": "72d3b0f881f0a904a87493cecaaf77abb87b5ca41c9e34ffb2a3bf47360d1869",
+      "bytes": 17507
+    },
+    "template/ref/049.jpg": {
+      "sha256": "689d775583803617b390072386fd1654ee103e464d9304ed7d48365d12d00b1b",
+      "bytes": 4126
+    },
+    "template/ref/053.jpg": {
+      "sha256": "d712e4f083859ce5c170db6630bab5b462b675408bf8c5ba087db7c4e0917ef8",
+      "bytes": 3302
+    },
+    "template/ref/063.jpg": {
+      "sha256": "277f55a4c90b5f61558a79bae29612cf34eed437f9f24288c749283fd1936e95",
+      "bytes": 15057
+    },
+    "template/ref/071.jpg": {
+      "sha256": "8eecf6726412d825a2c3cdcb9920ec29ae5461e80b5740bd8129f300fcb403e8",
+      "bytes": 62504
+    },
+    "template/ref/073.jpg": {
+      "sha256": "b2931bc004f0bc6e7af2518a0f13fd1232be54fae8f2fa8e8f333c88130d5fc3",
+      "bytes": 4587
+    },
+    "template/ref/093.jpg": {
+      "sha256": "5b215ccf13c521487b449f77cf919cbcce1c3aa6cfd39c116069177ac6bca333",
+      "bytes": 24644
+    },
+    "template/ref/114.jpg": {
+      "sha256": "bdedcc5af0855987e5e963a7a91a44ddfced1db202c1bf4bcbd8551c93765ff7",
+      "bytes": 4182
+    },
+    "template/ref/120.jpg": {
+      "sha256": "3dbc3463a80c678df8e34fd9ba00ec575713cfeac9c8bd33a029d11f6ddcfd64",
+      "bytes": 10701
+    },
+    "template/ref/140.jpg": {
+      "sha256": "c7055506f3c2da3b65ddab7fa3a094025689c21c0575c6468b7a4a34d9ccca38",
+      "bytes": 10069
+    },
+    "template/ref/157.jpg": {
+      "sha256": "a57ff676a01370dfa0cd591895a625b9272d99daec66816622af90c768af31d2",
+      "bytes": 5361
+    },
+    "template/ref/159.jpg": {
+      "sha256": "66f2a81b6290be200c331719b0704839c8b60da898d96bd95176b7853a7a6a47",
+      "bytes": 5024
+    },
+    "template/ref/167.jpg": {
+      "sha256": "a54b19f064e8d49918e6451d91aab04b5117786c6a42eb783cef5f8b347ab28d",
+      "bytes": 23915
+    },
+    "template/ref/175.jpg": {
+      "sha256": "a1800ee06c275e6d83eb1e84411bd1d3530ad570b6137029df74d102572a8ec0",
+      "bytes": 59236
+    },
+    "template/ref/178.jpg": {
+      "sha256": "40c5483d36809a796a8eea2fd210433dd4c659e3e987551c3197cd7f9d088913",
+      "bytes": 3001
+    },
+    "template/ref/190.jpg": {
+      "sha256": "107c42d08ee3617d070747490bd5f5385f85bcab91732ab810bc73307be29bda",
+      "bytes": 28300
+    },
+    "template/ref/201.jpg": {
+      "sha256": "3e9fc7caab0f4efa6f72ddf7334965a27f16dfbdff6024bd636fb516ad66defa",
+      "bytes": 10019
+    },
+    "template/ref/213.jpg": {
+      "sha256": "bb06429d03d1f3c4b79dbe65fe9a28febef05e615724a1613c8ee99ada8fe21c",
+      "bytes": 12420
+    },
+    "template/ref/226.jpg": {
+      "sha256": "77ba2c72bdab0d046d93b537a4aa4d0448cfccb1262c15ffb5d9ecbcf23e1eba",
+      "bytes": 4404
+    },
+    "template/ref/230.jpg": {
+      "sha256": "8bc85a21fc46851ac8433734ee08d3cb4d9035663c684688657597be69c5e4bb",
+      "bytes": 14317
+    },
+    "template/ref/241.jpg": {
+      "sha256": "b6ebdc414ea27d8bfc150368847b197f3c59984a9b4fbb5c1b9ac119e7ad85e3",
+      "bytes": 13671
+    },
+    "template/ref/251.jpg": {
+      "sha256": "b68fbcc3a88baad0bedfb8166926ee31bd7cb1dc7a5d1330747cff72efa499d2",
+      "bytes": 4100
+    },
+    "template/ref/260.jpg": {
+      "sha256": "1e69a266029bffcc38cec379fcfb1d4199ff77ccbbe73f95a637655295058440",
+      "bytes": 8886
+    },
+    "template/ref/269.jpg": {
+      "sha256": "c5926e69efa6515d2643dc9a7368a75f17209046311da453767b0c94b0786ef9",
+      "bytes": 51144
+    },
+    "template/ref/273.jpg": {
+      "sha256": "236308671bc73f910b5d4759e65edab5a1054d9cfdd2f457d863312c47040614",
+      "bytes": 18417
+    },
+    "template/ref/288.jpg": {
+      "sha256": "2b27e1c04139a6198c65e0d6026572ae95ce5d4ba65103ad3e153606089e16b3",
+      "bytes": 21934
+    },
+    "template/ref/303.jpg": {
+      "sha256": "e8ddf37f262d7f17f4b2f99a31c50d0d2f7c943d4a7482f52c397ee5f3f4ecbd",
+      "bytes": 11398
+    },
+    "template/ref/305.jpg": {
+      "sha256": "fe5a5fc4d9fd022600efc59ffa9dad584eec633f5a7adf0651084b74333425a5",
+      "bytes": 30599
+    },
+    "template/ref/307.jpg": {
+      "sha256": "8d954d5d708cd3120c7657c8cb7403748f1584957612999851a7d3f48d63ac45",
+      "bytes": 6724
+    },
+    "template/ref/318.jpg": {
+      "sha256": "0183a372af64e27429cc16ba3211ddb743f1cb61e4a299fb4804a361d1eb9689",
+      "bytes": 20312
+    },
+    "template/ref/329.jpg": {
+      "sha256": "ff74c59569e07ced91260a03233db7051b07275e3f0f310015dbfab00e35a46d",
+      "bytes": 9764
+    },
+    "template/ref/338.jpg": {
+      "sha256": "7dd9c06d3b84c0382989672ee47c41437359f8ac23380002a6203811e424b377",
+      "bytes": 23926
+    },
+    "template/ref/347.jpg": {
+      "sha256": "ecafd1a599a3e9a7c79185a915aabefbb03a037505842b70ca8d446d316103b6",
+      "bytes": 38603
+    },
+    "template/ref/349.jpg": {
+      "sha256": "262513a42047837fd7809a7a0071d4bf10b611e03e3224ba97db601c94793676",
+      "bytes": 9240
+    },
+    "template/ref/361.jpg": {
+      "sha256": "41643f374746bdcd5932122cdc76adf83cdce6f7cb7da37913e88ff6db5e9a0f",
+      "bytes": 25997
+    },
+    "template/ref/373.jpg": {
+      "sha256": "a5d6e43be74dc4d441d14b446f3c0c3fb3525b0776d11b21cbea618ce63160f8",
+      "bytes": 6651
+    },
+    "template/ref/389.jpg": {
+      "sha256": "94f6d91c582113157b284c1583b117b954cd06933bdb23b5f5bce0e7964c6cba",
+      "bytes": 4884
+    },
+    "template/ref/414.jpg": {
+      "sha256": "3d1c95f14419c992d6d1c69b7bce041e11d17ec380442c56d74d2648b843fb8b",
+      "bytes": 1151
+    },
+    "template/ref/430.jpg": {
+      "sha256": "363ae5529ee0de878cc831efe998c0bc8068ca714fe1156ead18efe7b5fe78aa",
+      "bytes": 15739
+    },
+    "template/ref/437.jpg": {
+      "sha256": "21e6093cc6c66866f77910207d8ed6629c74aef77430c18301f0c57f1b98955d",
+      "bytes": 39246
+    },
+    "template/ref/455.jpg": {
+      "sha256": "0e170883547580ba54ac593176958493b57ecf28ae9680c24551c9361a2a989f",
+      "bytes": 17665
+    },
+    "template/ref/473.jpg": {
+      "sha256": "a7ed4cbce6546e38aa593b7d3b8be973a2e98445690e4af508689eeaa161473a",
+      "bytes": 4610
+    },
+    "template/ref/476.jpg": {
+      "sha256": "f298cd80de09c095d47086319f613aae68dd28344a960fbc01307e7b7dac22e8",
+      "bytes": 3761
+    },
+    "template/ref/486.jpg": {
+      "sha256": "524d73ffc1d1d995d28a78b119c981f03d37a4e058bc0ffdf7ae8b6b0a1e2c91",
+      "bytes": 15786
+    },
+    "template/ref/495.jpg": {
+      "sha256": "8b71980013587f80511e52dd7202ebf90b5da6efb32b19d89de5e29f5cbb1797",
+      "bytes": 53412
+    },
+    "template/ref/497.jpg": {
+      "sha256": "9465b71a493039c39db6a3f846866c2ca06cd852773be748ec70c7caf28cf108",
+      "bytes": 4259
+    },
+    "template/ref/517.jpg": {
+      "sha256": "01cdaff9f3c50cf5985a5c39d3244ceb1bb6af34126787329d901b355c60cdb1",
+      "bytes": 22333
+    },
+    "template/ref/537.jpg": {
+      "sha256": "18f40e65a8bbf8d08a0c8752b68c52f8ad31db0e5092c9376b375b59ffc61928",
+      "bytes": 3902
+    },
+    "template/ref/543.jpg": {
+      "sha256": "31d1e957842ac88c6c8d629e1e3a067e0bcb598021933324e2d53a403962488b",
+      "bytes": 10615
+    },
+    "template/ref/564.jpg": {
+      "sha256": "a3518c32d1fe4a6790e69925b98567873dc7e515af177434184b8eb76f6874a2",
+      "bytes": 10368
+    },
+    "template/ref/581.jpg": {
+      "sha256": "891d67c5302aecc82aad6760af3d989c02d6c0ca28e6d4df8bea42f321dbb4eb",
+      "bytes": 5635
+    },
+    "template/ref/583.jpg": {
+      "sha256": "362cccd8f4a4649709d16864dd8415c24b4508b769285629fc51a50efeb8aeba",
+      "bytes": 4668
+    },
+    "template/ref/591.jpg": {
+      "sha256": "5614b4d447951848d65eac8f18c93fdbcd65b634ef945613a02d09c2fafa452f",
+      "bytes": 23297
+    },
+    "template/ref/599.jpg": {
+      "sha256": "072e560062227048dd64a05ed9bc6d3ecbaa0ef729eea82c2ce8980a44163cc8",
+      "bytes": 59417
+    },
+    "template/ref/602.jpg": {
+      "sha256": "9e1883ae032650de749a5b80daa36740b1b350c9c29af94d3539a4f76decabf3",
+      "bytes": 2805
+    },
+    "template/ref/613.jpg": {
+      "sha256": "aedb90c26c4d47b0b7cb182a6414b676b1a74656335250cdcb14fdf2ec423519",
+      "bytes": 27959
+    },
+    "template/ref/625.jpg": {
+      "sha256": "119a2977f80d06e9509a3f1d467497dcb8fa67fc915c02aefa9aee7c5187b724",
+      "bytes": 8125
+    },
+    "template/ref/637.jpg": {
+      "sha256": "0ae38897b16f91a0d7d6b31dfdc209fba0f48fa160f13f2f98afa7d7685e9c95",
+      "bytes": 13510
+    },
+    "template/ref/650.jpg": {
+      "sha256": "b37b7d69d7281f77723446b8fb6a36cfcf0a00b1007c840b49db46d1cc716694",
+      "bytes": 3808
+    },
+    "template/ref/654.jpg": {
+      "sha256": "a890095dc8a2b1ca78dca8d0edc8ec364bd5d3b1cb3a41e2e958a1a55e19b733",
+      "bytes": 13894
+    },
+    "template/ref/665.jpg": {
+      "sha256": "ea03f1777740f1997454c248f0d2270e00a59ac4e9dae74e0e84030bf856a9f2",
+      "bytes": 9876
+    },
+    "template/ref/675.jpg": {
+      "sha256": "dcc9bf1762b05069ed8834004bc798ca1eed72db58e0744a5e165d3e2dd9f145",
+      "bytes": 5637
+    },
+    "template/ref/684.jpg": {
+      "sha256": "fcc43be22732ae1e76b3b81f782d28cc7db3f78741c4663bf4939065ecdd1678",
+      "bytes": 9537
+    },
+    "template/ref/693.jpg": {
+      "sha256": "7ac0631c0b7a53fc981a9a4017eb2cbda2060d2ec6db5b09bb4837e055d40106",
+      "bytes": 48560
+    },
+    "template/ref/697.jpg": {
+      "sha256": "3075fb68f4cc085e12252a0af76103b54a5b543d292f2df6f18826419eab1099",
+      "bytes": 17572
+    },
+    "template/ref/712.jpg": {
+      "sha256": "c263af11803b8fbc8e325f2558429acde3e7b77405198e165fd0bc82642ad8cc",
+      "bytes": 20608
+    },
+    "template/ref/727.jpg": {
+      "sha256": "958af01c03afa4b2bb9ae08b1f88e853e7ba198e05678841bb337f2b871a3706",
+      "bytes": 10749
+    },
+    "template/ref/729.jpg": {
+      "sha256": "4ab33f5bc0f0c0d5faa8f9fc7f0487dc3dd6517c942b720f690aba888b4a06ac",
+      "bytes": 30998
+    },
+    "template/ref/731.jpg": {
+      "sha256": "3cc42c55368af24a526ceaf9ff24da9cd843acd53fbcf24a3412bcab3a626ae3",
+      "bytes": 6933
+    },
+    "template/ref/742.jpg": {
+      "sha256": "9b7f0b72db2fae39069677218084ac937f36971def3b588c68e1a6238bcd643e",
+      "bytes": 20413
+    },
+    "template/ref/753.jpg": {
+      "sha256": "2c4ac550974c98843ab46284838302799b9b6deb299148dedef4e3283f9b7a5f",
+      "bytes": 10143
+    },
+    "template/ref/762.jpg": {
+      "sha256": "666cad260737d7c7a3807d6a386e86cdf79ecdf053e122f79d57b8b431d4ca22",
+      "bytes": 22498
+    },
+    "template/ref/771.jpg": {
+      "sha256": "fc77e484bae39f61d1bfbd31875c1ef27533fe5260075b89120b489dc1725ac6",
+      "bytes": 34661
+    },
+    "template/ref/773.jpg": {
+      "sha256": "8de630064626ff53aee80f390def6403d440f2848e53244eef15f723ec920bd6",
+      "bytes": 9694
+    },
+    "template/ref/784.jpg": {
+      "sha256": "38857503e24c1b674c308122e7babfd676653ae46ca7650ac4504188b1bbf302",
+      "bytes": 24605
+    },
+    "template/ref/794.jpg": {
+      "sha256": "b7c4b015dd56b17754aaca636e0decc452bb0201f6588e975805c72f2c9a63c8",
+      "bytes": 1886
+    }
+  },
+  "downloads": {
+    "fonts/MeaCulpa-Regular.ttf": {
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_34sAKim8cOqbidZN9XoRhYrfbCs/534f6bbe-a560-4fb3-822f-d0380bcb0212.gz",
+      "gz": true,
+      "gz_sha256": "319d1e55711908df5a651896152d6362af1d73ca65c8a258bed8511f2ce698e3",
+      "gz_bytes": 77153,
+      "sha256": "c5a293151793820d25ff10844f1418170ae755fa61d0a126cefa1e9b82f21ce5",
+      "bytes": 162232,
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/meaculpa/MeaCulpa-Regular.ttf",
+      "about": "neon script lettering (SIL OFL, Google Fonts)"
+    },
+    "fonts/TwinkleStar-Regular.ttf": {
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_34sAKim8cOqbidZN9XoRhYrfbCs/0a6069ec-85d2-4898-95b1-186a1691ca36.gz",
+      "gz": true,
+      "gz_sha256": "25ebba58462b9f7554a80062acf79ad39bb9b42f7e867308d03e3cb43ac73f5a",
+      "gz_bytes": 133893,
+      "sha256": "fa38cff73e64d3da161a857cdc3babfb8427149356cb61f40a17310261652604",
+      "bytes": 310488,
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/twinklestar/TwinkleStar-Regular.ttf",
+      "about": "crayon lettering (SIL OFL, Google Fonts)"
+    },
+    "fonts/NotoMusic-Regular.ttf": {
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_34sAKim8cOqbidZN9XoRhYrfbCs/466eb4be-1087-4ef3-b3cf-5fa32c1abe59.gz",
+      "gz": true,
+      "gz_sha256": "365844b74a147bdcf80cc420b5dfe50d9b6fb86939aa4006d9ef30a1c8371b4f",
+      "gz_bytes": 96278,
+      "sha256": "e913be269fe16723d1dea0afc3c31a28be6958f6a7f0e6d5be6e98506c4022bd",
+      "bytes": 181128,
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/notomusic/NotoMusic-Regular.ttf",
+      "about": "treble clef in the ornaments (SIL OFL)"
+    },
+    "fonts/DejaVuSans-Bold.ttf": {
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_34sAKim8cOqbidZN9XoRhYrfbCs/04cf4d52-ab79-4ae3-b2d1-5aee84ad21ae.gz",
+      "gz": true,
+      "gz_sha256": "91cccd2e324003b908e03912af32733b03d932332f7b0c9469d4ff0ea877174e",
+      "gz_bytes": 350433,
+      "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+      "bytes": 705684,
+      "source": "https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/dejavu-fonts-ttf-2.37.tar.bz2",
+      "about": "music notes in the ornaments + sheet labels (DejaVu license)"
+    },
+    "models/isnet-general-use.onnx": {
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_34sAKim8cOqbidZN9XoRhYrfbCs/f29381ed-13ff-4091-ac91-9a73c5e6a744.gz",
+      "gz": true,
+      "gz_sha256": "25a75ec52dc602543ca28ca9bdb2153aa12fc520beec06c9a893909446924436",
+      "gz_bytes": 163905047,
+      "sha256": "60920e99c45464f2ba57bee2ad08c919a52bbf852739e96947fbb4358c0d964a",
+      "bytes": 178648008,
+      "source": "https://github.com/danielgatis/rembg/releases/download/v0.0.0/isnet-general-use.onnx",
+      "about": "cut-out edges (rembg release)"
+    },
+    "models/u2net_human_seg.onnx": {
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_34sAKim8cOqbidZN9XoRhYrfbCs/5a9ae5ca-a19a-41ce-a216-dffc90d6be48.gz",
+      "gz": true,
+      "gz_sha256": "501eea65071a82ce81c994ff0fd7d772f794ea159e107e29b1b49ea8c803e113",
+      "gz_bytes": 163539423,
+      "sha256": "01eb6a29a5c4d8edb30b56adad9bb3a2a0535338e480724a213e0acfd2d1c73c",
+      "bytes": 175997641,
+      "source": "https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net_human_seg.onnx",
+      "about": "person matte (rembg release)"
+    },
+    "models/face_detection_yunet_2023mar.onnx": {
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_34sAKim8cOqbidZN9XoRhYrfbCs/24d0d3a0-a05c-4ed9-b8f4-18de6c48e51d.gz",
+      "gz": true,
+      "gz_sha256": "09f132802b8588bda3493c6f4837ca1b48b1386b247752b498ff90bf5cef1c25",
+      "gz_bytes": 202481,
+      "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+      "bytes": 232589,
+      "source": "https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx",
+      "about": "face detector (OpenCV Zoo, MIT)"
+    },
+    "models/face_recognition_sface_2021dec.onnx": {
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_34sAKim8cOqbidZN9XoRhYrfbCs/00006228-b593-4057-a34c-613c422c5d84.gz",
+      "gz": true,
+      "gz_sha256": "246b84fdac24fb2c82f3c0673daee04b297d34068ad1053e91ba426158a49dbe",
+      "gz_bytes": 35912358,
+      "sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79",
+      "bytes": 38696353,
+      "source": "https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/face_recognition_sface/face_recognition_sface_2021dec.onnx",
+      "about": "face identity (OpenCV Zoo SFace, Apache-2.0): keeps one hero per phrase in clips with several people"
+    },
+    "wheels/opencv_python_headless-5.0.0.93-cp37-abi3-manylinux_2_28_x86_64.whl": {
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_34sAKim8cOqbidZN9XoRhYrfbCs/9f37b64e-b906-4d89-baf1-571bb03650ad.gz",
+      "gz": true,
+      "gz_sha256": "cf266028b4f98adf9288ced18e5cb0c41c1214758ad650118dd8224c742001f7",
+      "gz_bytes": 60908669,
+      "sha256": "ed709fdf9aa0bd1f2ed8549e71d19449b03a675bb581eb292285f6861953be37",
+      "bytes": 61204038,
+      "platform": "linux-x86_64",
+      "source": "https://pypi.org/project/opencv-python-headless/5.0.0.93/ (fetched through the Socket firewall index; sha256 = the PyPI digest)",
+      "about": "OpenCV for `setup --sandbox` on Linux hosts that already have numpy / Pillow / onnxruntime (the Higgsfield sandbox)"
+    }
+  }
+}

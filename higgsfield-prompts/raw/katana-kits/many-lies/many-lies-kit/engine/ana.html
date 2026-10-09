@@ -1,0 +1,65 @@
+<!doctype html><meta charset="utf-8"><body><script>
+// Per-frame analysis of ana/<clip>/NNNNN.jpg (0-based, 480 px wide) for frames [a, b):
+//   faces (FaceDetector, up to 3, largest first: bb [x,y,w,h], eyes [[x,y],[x,y]] sorted by x, mouth [x,y]) in ana px,
+//   y mean luma, p5 / p95, sh sharpness (gradient energy), m motion (mean abs diff vs the previous frame),
+//   wm fraction of saturated warm pixels (what the 'pop' grade keeps in colour), we the same inside the eye boxes,
+//   wo warm pixels outside the eye boxes (fraction of the frame).
+// POST /track/<clip>_<a>_<b>.json then log "ana done <clip> <a>-<b> <faces>/<n>"; errors log "ana ERROR <clip> <a>-<b> msg".
+// Chrome needs --enable-experimental-web-platform-features for FaceDetector.
+const post = (u, b) => fetch(u, { method: 'POST', body: b }), Q = new URLSearchParams(location.search);
+const pad = n => String(n).padStart(5, '0');
+(async () => {
+  const s = Q.get('clip') || 'v0', a = +Q.get('a') || 0, b = +Q.get('b'), tag = `${s} ${a}-${b}`;
+  const fail = async m => post('/log', `ana ERROR ${tag} ${String(m).replace(/\s+/g, ' ').slice(0, 300)}`);
+  if (typeof FaceDetector === 'undefined') return fail('FaceDetector unavailable (start Chrome with --enable-experimental-web-platform-features)');
+  const fd = new FaceDetector({ fastMode: false, maxDetectedFaces: 3 });
+  const RW = 160; let c = null, x = null, prev = null, RH = 0;
+  const load = async i => { const im = new Image(); im.src = `ana/${s}/${pad(i)}.jpg`; await im.decode(); return im; };
+  const gray = im => {
+    if (!c) { RH = Math.max(2, Math.round(RW * im.height / im.width)); c = document.createElement('canvas'); c.width = RW; c.height = RH; x = c.getContext('2d', { willReadFrequently: true }); }
+    x.drawImage(im, 0, 0, RW, RH); return x.getImageData(0, 0, RW, RH).data;
+  };
+  const res = []; let found = 0, thrown = 0;
+  if (a > 0) { try { prev = gray(await load(a - 1)); } catch (e) { prev = null; } }
+  for (let i = a; i < b; i++) {
+    let im; try { im = await load(i); } catch (e) { res.push(null); prev = null; continue; }
+    let r = null; for (let t = 0; t < 2 && r === null; t++) { try { r = await fd.detect(im); } catch (e) { } }
+    if (r === null) { thrown++; r = []; }
+    const faces = r.sort((p, q) => q.boundingBox.width * q.boundingBox.height - p.boundingBox.width * p.boundingBox.height).map(f => {
+      const bb = f.boundingBox, o = { bb: [bb.x, bb.y, bb.width, bb.height].map(v => Math.round(v * 10) / 10) }, eyes = [];
+      for (const l of f.landmarks || []) {
+        const cx = l.locations.reduce((s2, p) => s2 + p.x, 0) / l.locations.length, cy = l.locations.reduce((s2, p) => s2 + p.y, 0) / l.locations.length;
+        if (l.type === 'eye') eyes.push([Math.round(cx * 10) / 10, Math.round(cy * 10) / 10]);
+        else if (l.type === 'mouth') o.mouth = [Math.round(cx * 10) / 10, Math.round(cy * 10) / 10];
+      }
+      if (eyes.length) o.eyes = eyes.sort((p, q) => p[0] - q[0]);
+      return o;
+    });
+    if (faces.length) found++;
+    const d = gray(im), N = RW * RH, Y = new Float32Array(N), hist = new Uint32Array(256);
+    let sum = 0, wm = 0, we = 0, wn = 0;
+    const sc = RW / im.width, eyeBoxes = [];
+    for (const f of faces) for (const e of f.eyes || []) { const r2 = f.bb[2] * 0.14 * sc; eyeBoxes.push([e[0] * sc - r2, e[1] * sc - r2, e[0] * sc + r2, e[1] * sc + r2]); }
+    for (let p = 0, k = 0; p < N; p++, k += 4) {
+      const R = d[k] / 255, G = d[k + 1] / 255, B = d[k + 2] / 255, y = R * 0.2126 + G * 0.7152 + B * 0.0722;
+      Y[p] = y; sum += y; hist[Math.min(255, Math.floor(y * 256))]++;
+      const v = Math.max(R, G, B), mn = Math.min(R, G, B), df = v - mn, sat = v > 0 ? df / v : 0;
+      let warm = false;
+      if (sat > 0.55 && v > 0.25 && df > 0) { let h = v === R ? 60 * (G - B) / df : v === G ? 120 + 60 * (B - R) / df : 240 + 60 * (R - G) / df; if (h < 0) h += 360; warm = h >= 335 || h < 40; }
+      const px = p % RW, py = Math.floor(p / RW), inEye = eyeBoxes.some(q => px >= q[0] && px <= q[2] && py >= q[1] && py <= q[3]);
+      if (inEye) wn++;
+      if (warm) { wm++; if (inEye) we++; }
+    }
+    const pct = q => { const t = q * (N - 1); let acc = 0; for (let v = 0; v < 256; v++) { acc += hist[v]; if (acc > t) return v / 255; } return 1; };
+    let ge = 0, cnt = 0;
+    for (let yy = 1; yy < RH - 1; yy += 2) for (let xx = 1; xx < RW - 1; xx += 2) { const p = yy * RW + xx; ge += Math.abs(Y[p + 1] - Y[p - 1]) + Math.abs(Y[p + RW] - Y[p - RW]); cnt++; }
+    let mo = 0; if (prev) { for (let k = 0; k < d.length; k += 4) mo += Math.abs(d[k] - prev[k]) + Math.abs(d[k + 1] - prev[k + 1]) + Math.abs(d[k + 2] - prev[k + 2]); mo /= N * 3 * 255; }
+    prev = d;
+    const r4 = v => Math.round(v * 10000) / 10000;
+    res.push({ f: faces, y: r4(sum / N), p5: r4(pct(0.05)), p95: r4(pct(0.95)), sh: r4(ge / Math.max(1, cnt)), m: r4(mo), wm: r4(wm / N), we: wn ? r4(we / wn) : 0, wo: r4((wm - we) / N) });
+  }
+  await post(`/track/${s}_${a}_${b}.json`, JSON.stringify({ w: (await load(a)).width, h: (await load(a)).height, frames: res }));
+  if (thrown) return fail(`FaceDetector.detect threw on ${thrown}/${b - a} frames`);
+  await post('/log', `ana done ${tag} ${found}/${b - a}`);
+})().catch(e => post('/log', `ana ERROR ${Q.get('clip') || '?'} ${Q.get('a')}-${Q.get('b')} ${e && e.message || e}`));
+</script>

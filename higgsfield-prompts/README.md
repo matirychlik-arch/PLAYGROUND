@@ -27,6 +27,8 @@ higgsfield-prompts/
     ├── workflows/             ← A. 13 workflowów MCP (SKILL.md + references/ + scripts/)
     ├── presets/               ← B. 63 przepisy produktowe (/hero-shot, /crane-reveal …)
     ├── katana/                ← C. 28 presetów Katana (pełne master prompty autorów)
+    ├── katana-refs/           ← I. 20 map montażowych wideo referencyjnych Katany (analiza klatka po klatce)
+    ├── katana-kits/           ← I. 8 kitów CDN Katany (skrypty/szablony/timeline'y, bez binariów)
     ├── commands/              ← D/E. komendy: /genjutsu, /katana, /3d-jutsu, /use-after-effects, /use-blender, galerie
     ├── catalogs/              ← F. katalogi (Genjutsu, Katana, Viral, Marketing Studio, Explainer, AI Influencer, modele, apps)
     ├── github-skills/         ← G. oficjalne repo skilli Higgsfield (kopia 1:1 bez binariów)
@@ -201,11 +203,49 @@ Nie są to prompty Higgsfield, tylko zewnętrzny pakiet (MIT) zbudowany nad ich 
 
 ---
 
+## I. Katana – mapy montażowe referencji (20) i kity CDN (8) – `raw/katana-refs/`, `raw/katana-kits/`
+
+Pogłębienie grupy C. Większość presetów Katany to „reference remake” – prompt jest w wideo, nie w tekście. Żeby się do tego dobrać,
+w sandboxie Higgsfield (`sandbox_exec`) pobrano wszystkie 20 wideo referencyjnych z `static-public-media.higgsfield.ai/katana-presets`
+i przepuszczono je przez oficjalny analizator workflowu Katany (`$HF_WORKFLOWS/katana/scripts/analyze_ref.py --review-size`), czyli ten sam
+krok, który Claude wykonuje przy montażu. Wynikowy `analysis.json` skompresowano do czytelnej mapy montażowej (`_tools/summ2.py`).
+
+**`raw/katana-refs/<slug>.md`** (20 plików) – dla każdej referencji: totals (liczba cięć, flashe, solidy, inwersje, wzorce kadencji),
+global look (bw / luma / kontrast / saturacja / dominujący hue / letterbox), a potem **lista cięć** (klatki, czas, długość, rodzaj,
+kadencja, wektor ruchu, look, flashe/inwersje/tekst), osobno flashe, solidy, inwersje, strefy aktywności i „maybe-cuts”.
+To są propozycje detektora, nie potwierdzone cięcia – ale razem z master promptem z `raw/katana/` dają kompletny brief montażowy,
+który da się odtworzyć w Premiere/AE bez Higgsfield. Slugi: blue-eyes, car-edit, chrome-orbit, dark-and-moody, dark-aura,
+dreamy-streetwear, frame-dance, grunge-aura, kawaii-pop, last-katana, many-lies, nocturne, outfit-check, painting-flow, power-suit,
+star, tiger-eyes, tokyo-bloom, xerox-2, xerox-3.
+
+**`raw/katana-kits/<slug>/`** (8 kitów, 79 plików tekstowych, wszystkie zweryfikowane sha256) – presety, które wymagają kitu z CDN
+(`d2ol7oe51mr4n9.cloudfront.net`, URL + sha256 przypięte w master promptach). Pobrano i rozpakowano w sandboxie; do repo trafiły
+wszystkie pliki tekstowe (kod, szablony, timeline'y, licencje), **bez binariów** (modele `.onnx`, fonty `.ttf/.woff2`, muzyka, obrazy):
+
+| Kit | Co zawiera |
+|---|---|
+| `lights-out` | `render_template.py` (27 KB, 17 s kinetic typography, silhouette przez u2netp), `SHA256SUMS`, licencje OFL fontów |
+| `travel-edit` | `edit28.py` (28 s mood edit), licencje OFL (Montserrat, Pinyon Script) |
+| `living-lab` | silnik kompozycji w JS (`comp/engine.js`, `living_lab.js`, `deco.js`, `film.js`), `audio/score.html`, narzędzia Playwright (`tools/cap.js`, `render.sh`, `review.sh`, `keysheet.sh`, `music_window.py`) |
+| `many-lies` | `KIT.json`, `assets.json`, silnik HTML/JS (`engine/fx.js`, `ana.html`), `scripts/{ana,edit,ml,serve}.py`, `template/timeline.json`, `reference/{template,fixes}.md` |
+| `physical-body` | ta sama architektura co many-lies + `track.py` (śledzenie twarzy, YuNet/SFace) i `sandbox.sh` |
+| `let-me-show-you` | `aura_kit/aura.py` (36 KB), `compose.py`, `plan_template.json`, `clean_specs/{B,G,H}.json` |
+| `the-boys` | `build.py`, `timeline.json`, `LICENSES.txt` |
+| `pink-collage` | pakiet `glow/` (engine, media, seg, y2k), `scripts/{analyze,cast,edit,pc,qa}.py`, `template/template.json`, `assets.json`, `requirements.txt` |
+
+`_tools/job.sh` = skrypt, który to wszystko pobrał (pełne URL‑e kitów i referencji + sha256), `_tools/summ2.py` = kompresor map,
+`kits_listing.txt` = pełna lista plików kitów z rozmiarami (razem z pominiętymi binariami). `launch-cut` nie ma kitu na CDN – cała
+procedura (narzędzie `higgsedit`, timeline, stems) jest inline w `raw/katana/launch-cut*.md`.
+
+---
+
 ## Jak zweryfikowano wierność kopii
 
 Każdy plik w `raw/workflows`, `raw/presets`, `raw/katana` i `raw/commands` został **wyciągnięty programowo** z surowych
 wyników narzędzi MCP (transkrypty sesji + wyniki zapisane przez harness na dysku) i porównany bajt w bajt z tym, co zapisali
-agenci; różnice nadpisano dokładną kopią. Pliki bundle mają zgodność z `size_bytes` raportowanym przez serwer. Dwie wersje
+agenci; różnice nadpisano dokładną kopią. Pliki w `raw/katana-kits` i `raw/katana-refs` przeszły z sandboxu Higgsfield przez
+transkrypt sesji w porcjach ≤15 KB z nagłówkiem `sha256 + rozmiar`; po złożeniu każdy z 79 plików kitów zgadza się z sumą sha256
+policzoną w sandboxie (0 błędów, 0 niekompletnych). Pliki bundle mają zgodność z `size_bytes` raportowanym przez serwer. Dwie wersje
 SKILL.md: `SKILL.md` = to, co serwuje `get_workflow_instructions` (z doklejoną sekcją o unlimited generations i meta),
 `SKILL.bundle.md` = surowy plik z bundle, zapisany tylko tam, gdzie się różni (`ugc-video`, `video-editing`, `video-montage`, `website-builder-flow`).
 `_META.json` / `_MANIFEST.txt` obok SKILL.md = metadane odpowiedzi (wersja, lista plików).
@@ -215,6 +255,10 @@ SKILL.md: `SKILL.md` = to, co serwuje `get_workflow_instructions` (z doklejoną 
 - Strona `higgsfield.ai` niedostępna z kontenera (policy sieci). Galerie wzięte z MCP; brak wglądu w ewentualne opisy marketingowe ze strony.
 - Marketing Studio (418 + 231) i Shorts Studio: serwer nie zwraca tekstu promptu, tylko nazwy/typ/podgląd. Prompty są po stronie backendu.
 - Genjutsu trending/new: pobrana pierwsza strona (50) każdej listy.
+- Kity Katany: binaria (modele ONNX 4–180 MB, fonty, muzyka, obrazy) nie zostały przeniesione – `media_upload` i transfer base64
+  z sandboxu blokuje klasyfikator uprawnień, a CDN Higgsfield jest poza policy sieci kontenera. Pełne kity (z binariami) zostają
+  w sandboxie Higgsfield (`/home/user/kat/kits`) ok. 24 h; `_tools/job.sh` pobiera je ponownie w dowolnym środowisku z dostępem do CDN.
+- Mapy w `katana-refs` są wynikiem detektora (`analyze_ref.py`), nie ręczną weryfikacją cięć.
 - Zrzut jest stanem na 2026‑10‑09; Higgsfield wersjonuje workflowy (np. `faceless-video 2.4`), więc warto go odświeżać.
 
 ---
@@ -227,7 +271,7 @@ Z tego materiału najłatwiej wyciągnąć „tool‑agnostic” skille:
 2. **Photography vocabulary + negative prompts + refinement pass** (`product-photoshoot/references/`) – uniwersalny słownik dla każdego generatora obrazu.
 3. **Thumbnail frameworks (16)** – koncepcje miniatur niezależne od narzędzia.
 4. **Character sheet slot architecture** – prompt‑builder postaci z „anti‑AI realism”.
-5. **Katana edit maps** – kontrakt „reference → edit map → compositing recipe → QA”; przenośny na Premiere/AE jako brief montażowy, nie tylko na Pythona.
+5. **Katana edit maps** – kontrakt „reference → edit map → compositing recipe → QA”; przenośny na Premiere/AE jako brief montażowy, nie tylko na Pythona. Materiał: 28 master promptów (C) + 20 map montażowych referencji i 8 kitów (I).
 6. **Faceless scriptwriter + VO/captions** – pipeline narracyjny niezależny od Higgsfield (ElevenLabs, Kling, Seedance).
 7. **Brandkit design brain + logo prompt enhancer** – briefy identyfikacyjne.
 8. **Ad multiplier prompt‑writer** – gramatyka promptu „edycji istniejącego wideo” (podmiana/zachowanie).

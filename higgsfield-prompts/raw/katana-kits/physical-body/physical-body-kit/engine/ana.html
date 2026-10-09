@@ -1,0 +1,66 @@
+<!doctype html><meta charset="utf-8"><body><script>
+// Per-frame analysis of ana/<clip>/NNNNN.jpg (0-based, 480 px wide) for frames [a, b):
+//   f  faces (FaceDetector, up to 3, largest first: bb [x,y,w,h], eyes [[x,y],[x,y]] sorted by x, mouth [x,y]) in ana px
+//   y  mean luma, p5 / p95, sh sharpness (gradient energy), m motion (mean abs diff vs the previous frame)
+//   hv / hx / hy  the brightest spot (5x5 box-blurred luma at 160 px): value and position in ana px
+//   hl fraction of pixels brighter than 0.88 (light shafts, highlights)
+// POST /track/<clip>_<a>_<b>.json then log "ana done <clip> <a>-<b> <faces>/<n>"; errors log "ana ERROR <clip> <a>-<b> msg".
+// Chrome needs --enable-experimental-web-platform-features for FaceDetector.
+const post = (u, b) => fetch(u, { method: 'POST', body: b }), Q = new URLSearchParams(location.search);
+const pad = n => String(n).padStart(5, '0');
+(async () => {
+  const s = Q.get('clip') || 'v0', a = +Q.get('a') || 0, b = +Q.get('b'), tag = `${s} ${a}-${b}`;
+  const fail = async m => post('/log', `ana ERROR ${tag} ${String(m).replace(/\s+/g, ' ').slice(0, 300)}`);
+  if (typeof FaceDetector === 'undefined') return fail('FaceDetector unavailable (start Chrome with --enable-experimental-web-platform-features)');
+  const fd = new FaceDetector({ fastMode: false, maxDetectedFaces: 3 });
+  const RW = 160; let c = null, x = null, prev = null, RH = 0;
+  const load = async i => { const im = new Image(); im.src = `ana/${s}/${pad(i)}.jpg`; await im.decode(); return im; };
+  const gray = im => {
+    if (!c) { RH = Math.max(2, Math.round(RW * im.height / im.width)); c = document.createElement('canvas'); c.width = RW; c.height = RH; x = c.getContext('2d', { willReadFrequently: true }); }
+    x.drawImage(im, 0, 0, RW, RH); return x.getImageData(0, 0, RW, RH).data;
+  };
+  const r4 = v => Math.round(v * 10000) / 10000, r1 = v => Math.round(v * 10) / 10;
+  const res = []; let found = 0, thrown = 0, w0 = 0, h0 = 0;
+  if (a > 0) { try { prev = gray(await load(a - 1)); } catch (e) { prev = null; } }
+  for (let i = a; i < b; i++) {
+    let im; try { im = await load(i); } catch (e) { res.push(null); prev = null; continue; }
+    w0 = im.width; h0 = im.height;
+    let r = null; for (let t = 0; t < 2 && r === null; t++) { try { r = await fd.detect(im); } catch (e) { } }
+    if (r === null) { thrown++; r = []; }
+    const faces = r.sort((p, q) => q.boundingBox.width * q.boundingBox.height - p.boundingBox.width * p.boundingBox.height).map(f => {
+      const bb = f.boundingBox, o = { bb: [bb.x, bb.y, bb.width, bb.height].map(r1) }, eyes = [];
+      for (const l of f.landmarks || []) {
+        const cx = l.locations.reduce((s2, p) => s2 + p.x, 0) / l.locations.length, cy = l.locations.reduce((s2, p) => s2 + p.y, 0) / l.locations.length;
+        if (l.type === 'eye') eyes.push([r1(cx), r1(cy)]);
+        else if (l.type === 'mouth') o.mouth = [r1(cx), r1(cy)];
+      }
+      if (eyes.length) o.eyes = eyes.sort((p, q) => p[0] - q[0]);
+      return o;
+    });
+    if (faces.length) found++;
+    const d = gray(im), N = RW * RH, Y = new Float32Array(N), hist = new Uint32Array(256);
+    let sum = 0, hl = 0;
+    for (let p = 0, k = 0; p < N; p++, k += 4) {
+      const y = (d[k] * 0.2126 + d[k + 1] * 0.7152 + d[k + 2] * 0.0722) / 255;
+      Y[p] = y; sum += y; hist[Math.min(255, Math.floor(y * 256))]++;
+      if (y > 0.88) hl++;
+    }
+    const pct = q => { const t = q * (N - 1); let acc = 0; for (let v = 0; v < 256; v++) { acc += hist[v]; if (acc > t) return v / 255; } return 1; };
+    let ge = 0, cnt = 0;
+    for (let yy = 1; yy < RH - 1; yy += 2) for (let xx = 1; xx < RW - 1; xx += 2) { const p = yy * RW + xx; ge += Math.abs(Y[p + 1] - Y[p - 1]) + Math.abs(Y[p + RW] - Y[p - RW]); cnt++; }
+    let hv = -1, hx = 0, hy = 0;                    // brightest 5x5 box (borders excluded)
+    for (let yy = 4; yy < RH - 4; yy++) for (let xx = 4; xx < RW - 4; xx++) {
+      let s2 = 0; for (let oy = -2; oy <= 2; oy++) { const o = (yy + oy) * RW + xx; s2 += Y[o - 2] + Y[o - 1] + Y[o] + Y[o + 1] + Y[o + 2]; }
+      if (s2 > hv) { hv = s2; hx = xx; hy = yy; }
+    }
+    let mo = 0; if (prev) { for (let k = 0; k < d.length; k += 4) mo += Math.abs(d[k] - prev[k]) + Math.abs(d[k + 1] - prev[k + 1]) + Math.abs(d[k + 2] - prev[k + 2]); mo /= N * 3 * 255; }
+    prev = d;
+    const sc = im.width / RW;
+    res.push({ f: faces, y: r4(sum / N), p5: r4(pct(0.05)), p95: r4(pct(0.95)), sh: r4(ge / Math.max(1, cnt)), m: r4(mo),
+               hv: r4(hv / 25), hx: r1((hx + 0.5) * sc), hy: r1((hy + 0.5) * sc), hl: r4(hl / N) });
+  }
+  await post(`/track/${s}_${a}_${b}.json`, JSON.stringify({ w: w0, h: h0, frames: res }));
+  if (thrown) return fail(`FaceDetector.detect threw on ${thrown}/${b - a} frames`);
+  await post('/log', `ana done ${tag} ${found}/${b - a}`);
+})().catch(e => post('/log', `ana ERROR ${Q.get('clip') || '?'} ${Q.get('a')}-${Q.get('b')} ${e && e.message || e}`));
+</script>
