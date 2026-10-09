@@ -1,0 +1,7 @@
+No files were refused by the server. The katana manifest available_paths lists no binary files.
+Not served by the bundle (referenced by scripts/fonts/sources.json and scripts/faces.py, but absent from available_paths):
+- scripts/fonts/LeagueGothic[wdth].ttf
+- scripts/fonts/UnifrakturMaguntia-Book.ttf
+- scripts/fonts/Cormorant[wght].ttf
+- scripts/fonts/Inter[opsz,wght].ttf
+- scripts/models/face_detection_yunet_2023mar.onnx (downloaded at runtime by faces.py)

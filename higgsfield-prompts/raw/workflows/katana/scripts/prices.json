@@ -1,0 +1,1118 @@
+{
+  "currency": "credits",
+  "verified_at": "2026-10-08",
+  "source": "Historical observations from 2026-10-08 only; bundled rates do not authorize submissions. Before every selected request use the current non-submitting estimate_image_cost / estimate_video_cost contract or verified account quote and record the exact one-job credits plus evidence with ledger.py price-set. Generation tools submit jobs and are never pricing probes.",
+  "live_run": {
+    "date": "2026-10-08",
+    "charged": 111.12,
+    "jobs": [
+      "soul_2 2k 3:4 identity 0.12",
+      "seedance_2_5 omni_reference 10 s 720p 4:3 plate 70",
+      "remove_background on that plate 1",
+      "seedance_2_5 draft 4 s 12",
+      "hf_mult_replace_object 720p on a 96-frame pad 28"
+    ],
+    "note": "quoted = charged for every job; another chat on the same account spent 496 cr in the same window (foreign charges interleave in `transactions`)"
+  },
+  "rules": {
+    "unit": "second = rate x billed seconds per job; image = per image; job = flat per job; take = flat per take; chars = ceil(chars / per_chars) x rate",
+    "seconds": "ceil = ceil(d - eps) (integer-second video models; Genjutsu replace: always trim/pad the input to an exact integer); round = floor(d + 0.5) (Genjutsu motion_control: fraction <= 0.1 s -> do not pad, fill the <= 2 lost tail frames in code; else freeze-pad to ceil); exact = the seconds as given. A plan line with frames + fps is priced from the frames (the probed clip)",
+    "min_s": "a shorter job is billed (or, with min_rule reject, refused) at min_s; allowed_s snaps up to the next allowed duration",
+    "draft_res": "draft:true is billed at the 'draft' rate (else at draft_res) whatever resolution is passed",
+    "finalize": "a plan line with finalize:true (draft_job_id of a completed draft) is a full job at finalize.res whatever resolution is passed; without a duration it prices finalize.default_s",
+    "verified_live": "rate key -> what the live paid run of 2026-10-08 charged (VERIFIED, reconciled with transactions); `quote` lists these rates",
+    "fixed_input": "billed by the INPUT video length (Genjutsu driving video, video_edit source); the cheaper alternative cannot shorten it; the quote reports these lines as 'fixed input (min-billed)' with no utilisation target",
+    "genjutsu": "mt = motion transfer (F1b full-length takes get a full-take worst-case reserve), replace = object/person swap",
+    "driving_fps": "the driving clip must be an export at this fps (frames.py export --fps 24, then pad); other fps lines get a warning",
+    "reroll": "Execution reserves at most one full-price retry per required image/video job, subject to the finite hard cap and three image attempts per planned item. Failed and refunded attempts count. Legacy per-model reroll metadata only sizes a supported retry; it never authorizes submission.",
+    "est": "true = estimate (no cost endpoint, or observed charges only); est_hi = upper bound per unit for the worst case",
+    "size_factor": "generated seconds / unique screen seconds: [cheaper-alternative factor, upper sizing factor] (budget.md section 4)",
+    "call": "the MCP call shape `ledger.py params` prints: tool, res_param (resolution|quality|mode|null), res_values, duration (integer billed seconds), aspect, count/max_count, set (fixed params), check (set keys the pre-submit check enforces), medias / medias_by_mode placeholders, ref_role, raw (whole params for remove_background)"
+  },
+  "free": [
+    "sandbox_exec",
+    "media_upload",
+    "media_confirm",
+    "media_import_url",
+    "balance",
+    "transactions",
+    "jobs_wait",
+    "list_voices",
+    "show_generations",
+    "code",
+    "sandbox",
+    "estimate_image_cost",
+    "estimate_video_cost",
+    "models_get",
+    "models_search"
+  ],
+  "aliases": {
+    "seedance2_5": "seedance_2_5",
+    "seedance-2.5": "seedance_2_5",
+    "seedance_25": "seedance_2_5",
+    "cinema_studio_4": "cinematic_studio_video_4_0",
+    "genjutsu_mt": "hf_mult_motion_control",
+    "motion_control": "hf_mult_motion_control",
+    "genjutsu_motion_transfer": "hf_mult_motion_control",
+    "genjutsu_replace": "hf_mult_replace_object",
+    "replace_object": "hf_mult_replace_object",
+    "object_swap": "hf_mult_replace_object",
+    "soul_v2": "soul_2",
+    "text2image_soul_v2": "soul_2",
+    "soul2": "soul_2",
+    "seedream_5_0_pro": "seedream_v5_pro",
+    "seedream_5_pro": "seedream_v5_pro",
+    "seedream_v5_flash": "seedream_5_0_flash",
+    "nano_banana_flash": "nano_banana_2",
+    "video_background_remover": "remove_background",
+    "remove_background_video": "remove_background",
+    "remove_background_image": "image_background_remover",
+    "sam3_video": "sam_3_video",
+    "eleven_v4": "elevenlabs_v4",
+    "elevenlabs": "elevenlabs_v4",
+    "seed_audio_1_0": "seed_audio"
+  },
+  "models": {
+    "seedance_2_5": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "480p": 3,
+        "720p": 7,
+        "1080p": 12,
+        "draft": 3
+      },
+      "min_s": 4,
+      "max_s": 30,
+      "seconds": "ceil",
+      "default_res": "720p",
+      "draft_res": "480p",
+      "draft_note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "finalize": {
+        "res": "1080p",
+        "default_s": 5,
+        "note": "Historical draft/finalize observation only; current contract and exact price must be verified independently for each selected operation. Finalize is not a free second stage."
+      },
+      "verified_live": {
+        "720p": "10 s omni_reference plate 4:3 charged 70 (output 1112x834 H.264 24 fps, 241 frames; five 2 s shots landed on their timecodes)",
+        "draft": "4 s draft charged 12 (output 752x560)"
+      },
+      "size_factor": [2.0, 2.5],
+      "reroll": "min",
+      "modes": {
+        "video_edit": {
+          "fixed_input": true,
+          "reroll": "same",
+          "est": true,
+          "note": "Historical source-length billing observation. This operation requires the actual supported live contract and exact source-length estimate; it is not selected automatically."
+        }
+      },
+      "call": {
+        "tool": "generate_video",
+        "duration": true,
+        "aspect": true,
+        "count": true,
+        "set": {
+          "generate_audio": false,
+          "bitrate_mode": "high"
+        },
+        "check": ["generate_audio", "bitrate_mode"],
+        "medias_by_mode": {
+          "t2v": [],
+          "omni_reference": [
+            {
+              "role": "image",
+              "value": "<@image1: identity ref (user photo / identity still) media_id or job_id>"
+            }
+          ],
+          "video_edit": [
+            {
+              "role": "video",
+              "value": "<whole ref media_id, 4-30 s>"
+            },
+            {
+              "role": "image",
+              "value": "<hero media_id or job_id>"
+            }
+          ],
+          "video_extension": [
+            {
+              "role": "video",
+              "value": "<clip to extend: job_id>"
+            }
+          ]
+        },
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "cinematic_studio_video_4_0": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "480p": 3,
+        "720p": 7,
+        "1080p": 12
+      },
+      "min_s": 4,
+      "max_s": 30,
+      "seconds": "ceil",
+      "default_res": "720p",
+      "size_factor": [2.0, 2.5],
+      "reroll": "min",
+      "call": {
+        "tool": "generate_video",
+        "duration": true,
+        "aspect": true,
+        "count": true,
+        "set": {
+          "generate_audio": false,
+          "bitrate_mode": "high"
+        },
+        "check": ["generate_audio", "bitrate_mode"],
+        "medias": [
+          {
+            "role": "image",
+            "value": "<@image1: identity ref media_id or job_id>"
+          }
+        ],
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "seedance_2_0": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "480p": 3,
+        "720p": 4.5,
+        "1080p": 9,
+        "4k": 22
+      },
+      "min_s": 4,
+      "max_s": 15,
+      "seconds": "ceil",
+      "default_res": "720p",
+      "size_factor": [2.0, 2.5],
+      "reroll": "min",
+      "call": {
+        "tool": "generate_video",
+        "duration": true,
+        "aspect": true,
+        "count": true,
+        "set": {
+          "generate_audio": false,
+          "bitrate_mode": "high"
+        },
+        "check": ["generate_audio", "bitrate_mode"],
+        "medias": [
+          {
+            "role": "image",
+            "value": "<@image1: identity ref media_id or job_id>"
+          }
+        ],
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "modes": {
+        "fast": {
+          "rates": {
+            "480p": 1,
+            "720p": 2.5
+          },
+          "note": "fast has no 1080p/4k"
+        }
+      },
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "seedance_2_0_mini": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "480p": 0.5,
+        "720p": 1
+      },
+      "min_s": 4,
+      "max_s": 15,
+      "seconds": "ceil",
+      "default_res": "480p",
+      "size_factor": [2.0, 2.5],
+      "reroll": "min",
+      "call": {
+        "tool": "generate_video",
+        "duration": true,
+        "aspect": true,
+        "count": true,
+        "set": {
+          "generate_audio": false,
+          "bitrate_mode": "high"
+        },
+        "check": ["generate_audio", "bitrate_mode"],
+        "medias": [
+          {
+            "role": "image",
+            "value": "<@image1: identity ref media_id or job_id>"
+          }
+        ],
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "seedance1_5": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "480p": 0.6,
+        "720p": 1.2,
+        "1080p": 3
+      },
+      "allowed_s": [4, 8, 12],
+      "min_s": 4,
+      "max_s": 12,
+      "seconds": "ceil",
+      "default_res": "720p",
+      "reroll": "min",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "ad_multiplier": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "480p": 3,
+        "720p": 7,
+        "1080p": 12
+      },
+      "min_s": 4,
+      "max_s": 30,
+      "seconds": "exact",
+      "default_res": "720p",
+      "fixed_input": true,
+      "reroll": "same",
+      "call": {
+        "tool": "generate_video",
+        "duration": true,
+        "aspect": true,
+        "count": true,
+        "set": {
+          "generate_audio": false,
+          "bitrate_mode": "high"
+        },
+        "check": ["generate_audio", "bitrate_mode"],
+        "medias": [
+          {
+            "role": "video",
+            "value": "<whole ref media_id, 4-30 s>"
+          },
+          {
+            "role": "image",
+            "value": "<hero media_id or job_id>"
+          }
+        ],
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "ad_multiplier_v2": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "480p": 3.6,
+        "720p": 8.4,
+        "1080p": 14.4
+      },
+      "min_s": 4,
+      "max_s": 30,
+      "seconds": "exact",
+      "default_res": "720p",
+      "fixed_input": true,
+      "reroll": "same",
+      "est": true,
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "hf_mult_motion_control": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "480p": 3,
+        "720p": 7,
+        "1080p": 11
+      },
+      "min_s": 4,
+      "min_rule": "reject",
+      "seconds": "round",
+      "default_res": "720p",
+      "fixed_input": true,
+      "size_factor": [1.5, 1.5],
+      "reroll": "same",
+      "genjutsu": "mt",
+      "driving_fps": 24,
+      "call": {
+        "tool": "generate_video",
+        "duration": false,
+        "aspect": false,
+        "count": true,
+        "require_video": true,
+        "medias": [
+          {
+            "role": "image",
+            "value": "<@Image1: G5 2-ref still of the hero IN the cut's scene (job_id)>"
+          },
+          {
+            "role": "video",
+            "value": "<@Video1: driving clip media_id ({clip})>"
+          }
+        ],
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "hf_mult_replace_object": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "480p": 3,
+        "720p": 7,
+        "1080p": 11
+      },
+      "min_s": 4,
+      "min_rule": "reject",
+      "seconds": "ceil",
+      "eps": 0.001,
+      "default_res": "720p",
+      "fixed_input": true,
+      "size_factor": [1.5, 1.5],
+      "reroll": "same",
+      "genjutsu": "replace",
+      "driving_fps": 24,
+      "call": {
+        "tool": "generate_video",
+        "duration": false,
+        "aspect": false,
+        "count": true,
+        "require_video": true,
+        "medias": [
+          {
+            "role": "image",
+            "value": "<@Image1: hero photo media_id (never a keyframe)>"
+          },
+          {
+            "role": "video",
+            "value": "<@Video1: padded cut media_id ({clip})>"
+          }
+        ],
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "verified_live": {
+        "720p": "96-frame ping-pong pad (exactly 4.00 s @24) charged 28 = 4 s billed; output 1054x880 24 fps, 89 frames (3.71 s, not 96): assemble maps it proportionally"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "kling3_0": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "std": 1.75,
+        "pro": 2,
+        "4k": 6
+      },
+      "res_aliases": {
+        "720p": "std",
+        "1080p": "pro"
+      },
+      "min_s": 3,
+      "max_s": 15,
+      "seconds": "ceil",
+      "default_res": "std",
+      "reroll": "min",
+      "modes": {
+        "sound_off": {
+          "rates": {
+            "std": 1.25,
+            "pro": 1.5
+          }
+        }
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "kling3_0_turbo": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "720p": 1.5,
+        "1080p": 2
+      },
+      "min_s": 3,
+      "max_s": 15,
+      "seconds": "ceil",
+      "default_res": "720p",
+      "reroll": "min",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "kling_o3_image_reference": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "std": 1.25,
+        "pro": 2,
+        "4k": 6
+      },
+      "res_aliases": {
+        "720p": "std",
+        "1080p": "pro"
+      },
+      "min_s": 3,
+      "max_s": 15,
+      "seconds": "ceil",
+      "default_res": "std",
+      "reroll": "min",
+      "modes": {
+        "sound_off": {
+          "rates": {
+            "std": 1.0,
+            "pro": 1.5
+          }
+        }
+      },
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "kling3_0_motion_control": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "std": 2,
+        "pro": 2
+      },
+      "min_s": 3,
+      "seconds": "ceil",
+      "default_res": "std",
+      "fixed_input": true,
+      "reroll": "min",
+      "est": true,
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "veo3_1": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "fast": 4,
+        "preview": 10
+      },
+      "allowed_s": [4, 6, 8],
+      "min_s": 4,
+      "max_s": 8,
+      "seconds": "ceil",
+      "default_res": "fast",
+      "reroll": "min",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "veo3_1_lite": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "720p": 1.5
+      },
+      "allowed_s": [4, 6, 8],
+      "min_s": 4,
+      "max_s": 8,
+      "seconds": "ceil",
+      "default_res": "720p",
+      "reroll": "min",
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "wan2_6": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "720p": 1.5,
+        "1080p": 2
+      },
+      "allowed_s": [5, 10, 15],
+      "min_s": 5,
+      "max_s": 15,
+      "seconds": "ceil",
+      "default_res": "720p",
+      "reroll": "min",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "wan3_0": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "480p": 1,
+        "720p": 1.75,
+        "1080p": 3.5
+      },
+      "min_s": 2,
+      "max_s": 30,
+      "seconds": "ceil",
+      "default_res": "720p",
+      "reroll": "min",
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "minimax_h3": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "2k": 2
+      },
+      "min_s": 4,
+      "max_s": 15,
+      "seconds": "ceil",
+      "default_res": "2k",
+      "reroll": "min",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "grok_video_v15_lite": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "480p": 1,
+        "720p": 1,
+        "1080p": 4
+      },
+      "min_s": 1,
+      "seconds": "ceil",
+      "default_res": "720p",
+      "reroll": "min",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "happy_horse_video": {
+      "kind": "video",
+      "unit": "second",
+      "rates": {
+        "720p": 2.5,
+        "1080p": 4.5
+      },
+      "min_s": 1,
+      "seconds": "ceil",
+      "default_res": "720p",
+      "reroll": "min",
+      "execution_disabled": true,
+      "historical_only": true
+    },
+    "soul_2": {
+      "kind": "image",
+      "unit": "image",
+      "rates": {
+        "*": 0.12
+      },
+      "call": {
+        "tool": "generate_image",
+        "res_param": "quality",
+        "res_values": ["1.5k", "2k"],
+        "res_default": "2k",
+        "aspect": true,
+        "count": true,
+        "max_count": 4,
+        "ref_role": "image",
+        "max_refs": 1,
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "verified_live": {
+        "*": "2k 3:4 identity charged 0.12 (output 1536x2048, backdrop slightly grey)"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "seedream_5_0_flash": {
+      "kind": "image",
+      "unit": "image",
+      "rates": {
+        "*": 0.5
+      },
+      "call": {
+        "tool": "generate_image",
+        "res_values": ["1k", "1.5k", "2k"],
+        "res_default": "2k",
+        "aspect": true,
+        "count": true,
+        "max_count": 4,
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "historical_only": true
+    },
+    "seedream_v4_5": {
+      "kind": "image",
+      "unit": "image",
+      "rates": {
+        "*": 1
+      },
+      "historical_only": true
+    },
+    "seedream_v5_lite": {
+      "kind": "image",
+      "unit": "image",
+      "rates": {
+        "*": 1
+      },
+      "historical_only": true
+    },
+    "seedream_v5_pro": {
+      "kind": "image",
+      "unit": "image",
+      "rates": {
+        "1k": 1.25,
+        "1.5k": 1.25,
+        "2k": 2.5
+      },
+      "default_res": "2k",
+      "options": {
+        "remove_bg": {
+          "surcharge": 0,
+          "est": true,
+          "note": "remove_bg surcharge unmeasured"
+        }
+      },
+      "call": {
+        "tool": "generate_image",
+        "res_values": ["1k", "1.5k", "2k"],
+        "res_default": "2k",
+        "aspect": true,
+        "count": true,
+        "max_count": 4,
+        "medias": [
+          {
+            "role": "image",
+            "value": "<user photo media_id>"
+          }
+        ],
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "nano_banana_2": {
+      "kind": "image",
+      "unit": "image",
+      "rates": {
+        "1k": 1.5,
+        "2k": 2,
+        "4k": 3
+      },
+      "default_res": "1k",
+      "call": {
+        "tool": "generate_image",
+        "res_values": ["1k", "2k", "4k"],
+        "res_default": "1k",
+        "aspect": true,
+        "count": true,
+        "max_count": 4,
+        "medias": [
+          {
+            "role": "image",
+            "value": "<@image1: reference cut frame (captions cropped) media_id>"
+          },
+          {
+            "role": "image",
+            "value": "<@image2: hero photo or identity still id>"
+          }
+        ],
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "historical_only": true
+    },
+    "nano_banana_2_1": {
+      "kind": "image",
+      "unit": "image",
+      "rates": {
+        "1k": 1.5,
+        "2k": 2,
+        "4k": 3
+      },
+      "default_res": "1k",
+      "historical_only": true
+    },
+    "nano_banana_2_lite": {
+      "kind": "image",
+      "unit": "image",
+      "rates": {
+        "*": 1
+      },
+      "historical_only": true
+    },
+    "nano_banana": {
+      "kind": "image",
+      "unit": "image",
+      "rates": {
+        "*": 1
+      },
+      "historical_only": true
+    },
+    "nano_banana_pro": {
+      "kind": "image",
+      "unit": "image",
+      "rates": {
+        "1k": 2,
+        "2k": 2,
+        "4k": 4
+      },
+      "default_res": "2k",
+      "call": {
+        "tool": "generate_image",
+        "res_values": ["1k", "2k", "4k"],
+        "res_default": "2k",
+        "aspect": true,
+        "count": true,
+        "max_count": 4,
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "historical_only": true
+    },
+    "gpt_image_2": {
+      "kind": "image",
+      "unit": "image",
+      "default_res": "1k",
+      "default_quality": "low",
+      "rates": {
+        "low/1k": 0.5,
+        "low/2k": 0.5,
+        "low/4k": 0.75,
+        "medium/1k": 1,
+        "medium/2k": 2,
+        "medium/4k": 2.5,
+        "high/1k": 3.5,
+        "high/2k": 6.5,
+        "high/4k": 11
+      },
+      "call": {
+        "tool": "generate_image",
+        "res_values": ["1k", "2k", "4k"],
+        "res_default": "1k",
+        "quality_param": true,
+        "aspect": true,
+        "count": true,
+        "max_count": 4,
+        "ref_role": "image",
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "gpt_image_2_5": {
+      "kind": "image",
+      "unit": "image",
+      "default_res": "1k",
+      "default_quality": "low",
+      "rates": {
+        "low/1k": 0.25,
+        "medium/1k": 0.5,
+        "high/1k": 1.5,
+        "xhigh/1k": 2.5,
+        "max/1k": 5,
+        "low/2k": 0.5,
+        "low/4k": 0.75
+      },
+      "call": {
+        "tool": "generate_image",
+        "res_values": ["1k", "2k", "4k"],
+        "res_default": "1k",
+        "quality_param": true,
+        "aspect": true,
+        "count": true,
+        "max_count": 4,
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "flux_2": {
+      "kind": "image",
+      "unit": "image",
+      "default_res": "1k",
+      "default_quality": "pro",
+      "rates": {
+        "pro/1k": 1,
+        "pro/2k": 1.5,
+        "flex/1k": 3,
+        "flex/2k": 5,
+        "max/1k": 4,
+        "max/2k": 6
+      },
+      "historical_only": true
+    },
+    "flux_kontext": {
+      "kind": "image",
+      "unit": "image",
+      "rates": {
+        "*": 1.5
+      },
+      "historical_only": true
+    },
+    "kling_omni_image": {
+      "kind": "image",
+      "unit": "image",
+      "rates": {
+        "*": 0.5
+      },
+      "historical_only": true
+    },
+    "z_image": {
+      "kind": "image",
+      "unit": "image",
+      "rates": {
+        "*": 0.15
+      },
+      "historical_only": true
+    },
+    "remove_background": {
+      "kind": "post",
+      "unit": "job",
+      "rates": {
+        "*": 1
+      },
+      "call": {
+        "tool": "remove_background",
+        "raw": {
+          "media_id": "<completed video job_id or confirmed video media_id>",
+          "media_type": "video"
+        },
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "verified_live": {
+        "*": "1 cr on a 10 s 720p Seedance plate (241 frames)"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "image_background_remover": {
+      "kind": "post",
+      "unit": "job",
+      "rates": {
+        "*": 1
+      },
+      "call": {
+        "tool": "remove_background",
+        "raw": {
+          "media_id": "<image job_id or media_id>",
+          "media_type": "image"
+        },
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "historical_only": true
+    },
+    "sam_3_video": {
+      "kind": "post",
+      "unit": "job",
+      "rates": {
+        "*": 1.14
+      },
+      "est": true,
+      "est_hi": 2.5,
+      "call": {
+        "tool": "generate_video",
+        "res_param": null,
+        "duration": false,
+        "aspect": false,
+        "count": false,
+        "frames_count": true,
+        "no_prompt": true,
+        "set": {
+          "prompt": "person",
+          "apply_mask": false
+        },
+        "check": ["apply_mask"],
+        "medias": [
+          {
+            "role": "video",
+            "value": "<plate job_id or media_id>"
+          }
+        ],
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "bytedance_video_upscale": {
+      "kind": "post",
+      "unit": "second",
+      "rates": {
+        "1080p": 0.02,
+        "2k": 0.04,
+        "4k": 0.08
+      },
+      "seconds": "exact",
+      "min_s": 0,
+      "default_res": "1080p",
+      "fixed_input": true,
+      "modes": {
+        "pro": {
+          "rates": {
+            "1080p": 0.2,
+            "2k": 0.4,
+            "4k": 0.8
+          }
+        }
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "video_upscale": {
+      "kind": "post",
+      "unit": "second",
+      "rates": {
+        "*": 0.4
+      },
+      "seconds": "exact",
+      "min_s": 0,
+      "fixed_input": true,
+      "historical_only": true
+    },
+    "reframe": {
+      "kind": "post",
+      "unit": "second",
+      "rates": {
+        "480p": 3.6,
+        "720p": 5.1,
+        "1080p": 9.6
+      },
+      "seconds": "ceil",
+      "min_s": 1,
+      "default_res": "720p",
+      "fixed_input": true,
+      "est": true,
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "bytedance_image_upscale": {
+      "kind": "post",
+      "unit": "job",
+      "rates": {
+        "*": 2
+      },
+      "historical_only": true
+    },
+    "seed_audio": {
+      "kind": "audio",
+      "unit": "take",
+      "rates": {
+        "*": 2
+      },
+      "est": true,
+      "call": {
+        "tool": "generate_audio",
+        "res_param": null,
+        "count": false,
+        "aspect": false,
+        "set": {
+          "voice_type": "preset",
+          "voice_id": "<from list_voices>",
+          "format": "wav",
+          "sample_rate": 48000
+        },
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "elevenlabs_v4": {
+      "kind": "audio",
+      "unit": "chars",
+      "per_chars": 30,
+      "default_chars": 300,
+      "rates": {
+        "*": 0.23
+      },
+      "call": {
+        "tool": "generate_audio",
+        "res_param": null,
+        "count": false,
+        "aspect": false,
+        "set": {
+          "dialogue": [
+            {
+              "text": "<line>",
+              "voice_id": "<uuid>",
+              "voice_type": "preset"
+            }
+          ]
+        },
+        "verified": "historical shape, canonical roles updated; current provider contract remains authoritative"
+      },
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "elevenlabs_v4_turbo": {
+      "kind": "audio",
+      "unit": "chars",
+      "per_chars": 30,
+      "default_chars": 300,
+      "rates": {
+        "*": 0.15
+      },
+      "historical_only": true
+    },
+    "text2speech_v2": {
+      "kind": "audio",
+      "unit": "take",
+      "rates": {
+        "*": 0.15
+      },
+      "historical_only": true
+    },
+    "mirelo_text_to_audio": {
+      "kind": "audio",
+      "unit": "second",
+      "rates": {
+        "*": 0.25
+      },
+      "seconds": "ceil",
+      "min_s": 1,
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "sonilo_music": {
+      "kind": "audio",
+      "unit": "second",
+      "rates": {
+        "*": 0.0625
+      },
+      "seconds": "ceil",
+      "min_s": 1,
+      "note": "Historical observation only; verify current contract and exact credit price before submission.",
+      "historical_only": true
+    },
+    "speech2text": {
+      "kind": "audio",
+      "unit": "second",
+      "rates": {
+        "*": 0.01
+      },
+      "seconds": "exact",
+      "min_s": 0,
+      "historical_only": true
+    }
+  },
+  "execution_policy": {
+    "fresh_video_model": "seedance_2_5",
+    "direct_transformations": ["hf_mult_motion_control", "hf_mult_replace_object"],
+    "dispatch": "single job: guard reservation, submit, add; batches disabled",
+    "prices": "historical table is display only; exact per-request live estimate required by guard",
+    "preset_contract": "never infer a call or currency from a price; verified_request required for supported Genjutsu presets"
+  }
+}

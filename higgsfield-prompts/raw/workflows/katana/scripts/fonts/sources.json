@@ -1,0 +1,45 @@
+{
+  "commit": "5e8a3ba899557829a76cfdac30fa512bda91d7ca",
+  "files": [
+    {
+      "file": "LeagueGothic[wdth].ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/leaguegothic/LeagueGothic%5Bwdth%5D.ttf",
+      "sha256": "3b0e998c9a0034222394ffecdd383e6948259ad037b95555b139a217629ce1d0"
+    },
+    {
+      "file": "leaguegothic-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/leaguegothic/OFL.txt",
+      "sha256": "44778c339892f79188c60b7471485dd5af92c59351c7f9629a00fc625c6cae5d"
+    },
+    {
+      "file": "UnifrakturMaguntia-Book.ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/unifrakturmaguntia/UnifrakturMaguntia-Book.ttf",
+      "sha256": "d64afc0547059dd2e4a78da48bda0aba0a9901be58c7f8c201a8b2b6b4492cc8"
+    },
+    {
+      "file": "unifrakturmaguntia-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/unifrakturmaguntia/OFL.txt",
+      "sha256": "96199bf9ff12dd471a66911dee95440737b437e7f5a6fd30e9e950c16d66e8df"
+    },
+    {
+      "file": "Cormorant[wght].ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/cormorant/Cormorant%5Bwght%5D.ttf",
+      "sha256": "8f12cb21f05b61649192eaff13eeeb1b5619bc524feeae672fb916974259a076"
+    },
+    {
+      "file": "cormorant-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/cormorant/OFL.txt",
+      "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956"
+    },
+    {
+      "file": "Inter[opsz,wght].ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+    },
+    {
+      "file": "inter-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/inter/OFL.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+    }
+  ]
+}

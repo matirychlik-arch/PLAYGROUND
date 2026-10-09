@@ -1,0 +1,11 @@
+{
+  "note": "Katana preset catalog as returned by get_presets source=katana (names/slugs only; the full published instructions of each preset live in raw/katana/<slug>.md). Fetched 2026-10-09.",
+  "categories": ["aura_farming", "motion", "clipping"],
+  "katana_source_higgsfield": ["grunge-aura"],
+  "katana_source_community": {
+    "aura_farming": ["dreamy-streetwear", "power-suit", "outfit-check", "tiger-eyes", "frame-dance", "tokyo-bloom", "star", "blue-eyes", "dark-and-moody", "painting-flow", "dark-aura", "nocturne", "car-edit", "xerox-3", "xerox-2", "the-boys", "kawaii-pop", "let-me-show-you", "last-katana", "pink-collage"],
+    "motion": ["launch-cut", "lights-out", "living-lab", "chrome-orbit"],
+    "clipping": ["travel-edit", "many-lies", "physical-body"]
+  },
+  "titles": {"grunge-aura":"Grunge Aura","dreamy-streetwear":"Dreamy Streetwear","power-suit":"Power Suit","outfit-check":"Outfit Check","tiger-eyes":"Tiger Eyes","frame-dance":"Frame Dance","tokyo-bloom":"Tokyo Bloom","star":"Star","blue-eyes":"Blue Eyes","dark-and-moody":"Dark and Moody","painting-flow":"Painting Flow","dark-aura":"Dark Aura","nocturne":"Nocturne","car-edit":"Car Edit","xerox-3":"Xerox 3","xerox-2":"Xerox 2","the-boys":"The Boys","kawaii-pop":"Kawaii Pop","let-me-show-you":"Let Me Show You","last-katana":"Last Katana","pink-collage":"Pink Collage","launch-cut":"Launch Cut","lights-out":"Lights Out","living-lab":"Living Lab","chrome-orbit":"Chrome Orbit","travel-edit":"Travel Edit","many-lies":"Many Lies","physical-body":"Physical Body"}
+}

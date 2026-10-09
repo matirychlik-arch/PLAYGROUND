@@ -1,0 +1,611 @@
+[
+  {
+    "id": "fb6ca8f7-493e-42e6-9e0d-f3e2e695825d",
+    "name": "Floating fall",
+    "description": "Falls backward as their belongings float in midair, with the camera moving through crisp product close-ups before the fall resumes. Built for playful product reveals, dynamic lifestyle ads, and surreal slow-motion edits.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "8b8d053d-08ff-436c-9767-315efe5f0cfc",
+    "name": "Vanish",
+    "description": "The subject's body instantly disappears, leaving their empty clothing to suddenly collapse and fall flat onto the ground. Built for viral hooks, comedic reveals, and surreal visual effects.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "a5e06af0-626e-4634-a523-76bf57c7b3a8",
+    "name": "Eyes in",
+    "description": "The camera dives directly into the subject’s eye, seamlessly passing through the dark void of the pupil to transport the viewer into an entirely new scene. Built for surreal narratives, psychological aesthetics, and mesmerizing visual flow.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "dd509a98-fffe-4b30-915b-3fd93b31bbc9",
+    "name": "Cutout",
+    "description": "The surroundings break apart into floating cutout layers, revealing a clean white void around the subject before snapping back into place. Built for surreal fashion edits, mixed-media visuals, and playful architectural transitions.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "23507548-cd71-423b-a5fd-0de1b0a09222",
+    "name": "Wild ride",
+    "description": "A high-speed, dynamic camera orbit that aggressively sweeps around a rapidly spinning or drifting subject. The camera executes precise, controlled movements, smoothly shifting from high overhead angles to low ground-level perspectives while keeping the central action perfectly locked in frame. Built for action sequences, automotive edits, and high-energy music videos. ",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "af71aba0-66b8-42a2-a33d-d08aa7ec5836",
+    "name": "Lidar transition",
+    "description": "The world tilts around the subject, sending loose objects sliding and tumbling past while they remain calmly in place. Built for surreal fashion edits, playful gravity distortions, and offbeat music videos.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "3e568b72-8d27-4b0d-a772-399137f18850",
+    "name": "Smash and grab",
+    "description": "The camera frames the product through a car window as the subject shatters the glass and snatches it, then cuts to a fast tracking shot of their getaway. Built for bold product reveals, playful action edits, and dynamic lifestyle ads.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "ff501ca6-1d60-4ab4-8675-6273adfd977b",
+    "name": "Incline",
+    "description": "The world tilts around the subject, sending loose objects sliding and tumbling past while they remain calmly in place. Built for surreal fashion edits, playful gravity distortions, and offbeat music videos.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "32650589-e3dc-48c7-b26d-c1116e3acf9d",
+    "name": "Clones",
+    "description": "Identical clones appear throughout the scene, mirroring the subject’s movements as the original steps toward the camera. Built for surreal fashion edits, synchronized performances, and playful music videos.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "6821208a-3078-4431-92df-8f2e46a833f4",
+    "name": "Infinite clones",
+    "description": "A static wide-angle shot where a person and their identical clones continuously get out of a small car and run away in all directions. Built for surreal effects, comedy, and music videos.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "2e215b1a-7df1-4c96-a97a-baf611f7d38e",
+    "name": "Selfception",
+    "description": "Endless versions of the subject repeat inside one another as the camera continuously zooms into the miniature figure held in their hands. Built for recursive illusions, seamless zoom loops, and mind-bending character edits.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "d43818b0-7c5c-4c19-a67c-2b38beb5367c",
+    "name": "Act natural",
+    "description": "A cinematic time-manipulation effect that completely suspends your subject and surrounding objects mid-action while the rest of the world continues to move in real-time. Built for surreal visual storytelling, dramatic pauses, and scroll-stopping creative edits.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "ddb12fd4-5bbf-4bb1-800b-7d409f3066b5",
+    "name": "Monster dab",
+    "description": "A colossal fantasy creature drops from the sky behind the subject, seamlessly matching their visual style. Built for cinematic creature reveals, dark fantasy scenes, and dramatic character moments.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "c277871a-938b-4c09-b825-41c217e7f727",
+    "name": "Street colossus",
+    "description": "A cinematic scale-shifting effect that transforms you into a towering giant seamlessly integrated into a sprawling cityscape. Built for surreal urban edits, colossal creature aesthetics storytelling, and epic visual impact.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "262d1281-9e6e-4530-b1b2-ce74f7a33df9",
+    "name": "World morphing",
+    "description": "The entire background environment lifts and folds inward around a stationary central subject, dramatically morphing the landscape into a massive, gravity-defying enclosure. Built for surreal visual effects and mind-bending scene shifts.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "568a5b0d-f82d-4441-b833-a14c48a0d815",
+    "name": "Studio slide",
+    "description": "Multiple copies of a single person appear simultaneously at varying scales, angles, and depths within the same frame. The figures smoothly slide past one another, creating a dynamic 3D layering effect against a solid background. Built for fashion reels, lookbooks, and stylized edits.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "93a606f8-87cb-4fb0-98a8-694d08f9b319",
+    "name": "High flip",
+    "description": "The camera rises above the subject and flips overhead, seamlessly revealing a new character and location on the other side. Built for cinematic scene switches, dramatic character reveals, and fluid music video transitions.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "7ca07da7-5471-48fa-80a7-97a29a7ec2bc",
+    "name": "Lacewalker",
+    "description": "A miniature version of the subject strolls past their giant counterpart before balancing on a thin strap stretched between oversized handbags. Built for playful scale illusions, surreal fashion campaigns, and imaginative product showcases.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "acc07eb5-2d40-4ace-9789-48d5bf19639c",
+    "name": "Burning man",
+    "description": "A flaming double appears before the subject and reaches out for a handshake, bringing them face-to-face with their burning counterpart. Built for surreal character reveals, cinematic music videos, and dramatic visual storytelling.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "bc0f007c-3319-405e-b1f4-341f65000e2b",
+    "name": "Melting",
+    "description": "The subject slowly melts into a glossy puddle, with their clothing and accessories stretching into liquid trails before pooling on the ground. Built for surreal transformations, experimental fashion edits, and playful disappearing acts.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "eee3cd37-1072-428d-a921-a37c3735423c",
+    "name": "boarding pass",
+    "description": "A dynamic travel transition that turns your walk into a global runway, seamlessly changing your outfit and scenic backdrop with every giant flight ticket you cross. Built for travel vlogs, fashion lookbooks, and stylish lifestyle edits.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "6e822598-7221-4f89-9a7d-81bb812433d9",
+    "name": "Frozen in motion",
+    "description": "The subject freezes in midair while pedestrians and traffic continue moving naturally around them. Built for surreal street scenes, striking fashion edits, and cinematic moments suspended in time.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "118138a4-5b5d-471e-a29f-69faa58aee5a",
+    "name": "Architecture wave",
+    "description": "A massive architectural reality warp. While the subject moves naturally in the foreground, towering buildings behind them bend, fold, and ripple as if made of liquid. Built for surreal city scenes, cinematic scale reveals, and mind-bending transitions.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "4f46bb84-20f5-44d5-bee1-e1e2c0faa809",
+    "name": "Scrapbook collage",
+    "description": "A dynamic, multi-panel layout where a central full-body shot is displayed alongside smaller inset frames showing simultaneous close-up details of the subject. Built for fashion videos, lookbooks, and stylized edits.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "8bca1173-5327-478c-b476-cbdfcaf001a3",
+    "name": "Stop world",
+    "description": "",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "81e45e83-caa5-4d06-a935-2ad776bf039f",
+    "name": "Agamemnon",
+    "description": "Agamemnon steps out of the screen as armored warriors storm the theater. Larger-than-life and perfect for bold reveals or transitions.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "1ac7759b-5b1a-4523-bd77-b6bb5d6df84e",
+    "name": "Earth zoom",
+    "description": "The camera plunges from orbit — through clouds, past the city grid — and lands at street level in one unbroken move. Built for scale, transitions, and dramatic reveals.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "aa5d78cc-00bf-466d-bb91-aff6ea79495c",
+    "name": "Ink Riot",
+    "description": "Stacked mixed-media composition",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "463c5c9e-5980-46bd-a9be-ebb4b4a3add4",
+    "name": "Fallen angel",
+    "description": "Cabanel’s original \"The Fallen Angel\" below, your cinematic version of the portrait above. Defiant and instantly recognizable—a split-screen format built to go viral.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "6626ad13-f00f-4b67-be41-c768b9c0a380",
+    "name": "Bullet time",
+    "description": "A waitress trips, sending coffee and plates flying as time freezes for a sweeping 360° camera move. Everything snaps back into place, ending on her knowing smirk. Slick and cinematic—perfect for high-impact reveals.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "6eab963f-5a31-4f3c-bb23-26ba1d86a49f",
+    "name": "Fairytale castle",
+    "description": "An empty field at dusk leads to a glowing castle, with a winding stream and fireworks overhead. Dreamlike and cinematic—built for fantasy intros, magical reveals, or storybook worlds.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "f6566fe4-418b-46bc-9d13-bd4b19de0ff6",
+    "name": "Comic",
+    "description": "Graphic illustrated comic look",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "d5702ff7-e146-4369-bc84-8816929446ff",
+    "name": "Cold vision",
+    "description": "Cold neon shadow lighting",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "d4dc70f8-def4-44b0-b507-82ef7c88971d",
+    "name": "Cyclope",
+    "description": "Redon’s original \"The Cyclops\" below, an animated recreation starring you above. Surreal and instantly recognizable—a split-screen format built to go viral.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "f1f09357-8db4-4932-b598-4b62e962a716",
+    "name": "Particles",
+    "description": "Luminous particles in motion",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "ac033a3c-4a91-4340-b19f-c6df281c9e80",
+    "name": "Mighty fighter",
+    "description": "Become a battle-worn knight in a misty field of red poppies. Melancholic and cinematic—perfect for fallen-hero portraits or dark fantasy storytelling.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "507b31bc-1eed-4651-880a-3fbafbb1e21e",
+    "name": "Windows",
+    "description": "Overlapping digital interface windows",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "51ce6a8b-3921-466b-b6d5-25816720af11",
+    "name": "Canvas",
+    "description": "Hand-drawn canvas-style artwork",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "e0da05ed-12ae-485b-93ac-939f885f314d",
+    "name": "Pigeons",
+    "description": "A rider glides through the city on pigeons like roller skates, hovering above the street. Absurd and hilarious — a trend-ready visual built to stop the scroll.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "91506e72-9b2f-474d-ada5-e1b144699b86",
+    "name": "Tracking",
+    "description": "Dynamic object tracking lines",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "6551373d-7ad9-4f33-8bb1-9bb7b570cf6e",
+    "name": "Superstar",
+    "description": "Stadium lights, a sea of raised phones, and a face taking over the jumbotron—all seen from deep inside the crowd. Raw and charged—an instant hook for high-energy intros",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "cbf62edd-296f-493e-b4dc-29bef0a7214c",
+    "name": "Pearl earring",
+    "description": "Vermeer’s original \"Girl with a Pearl Earring\" below, a personalized animated recreation starring you above. Timeless and instantly recognizable—a split-screen format built to go viral.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "16ac0b13-2e62-4764-9469-56ff287b6a08",
+    "name": "LSD",
+    "description": "Hallucinogenic color waves",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "16187c71-9db0-40ae-b1a4-4c2035933068",
+    "name": "Blue depth",
+    "description": "A wall of dark water fills the frame as fish drift past in slow motion and everything else holds perfectly still. Moody and hypnotic—perfect for transitions or storytelling.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "3a4261c7-da21-4879-b4c1-f2516c5cd9be",
+    "name": "Palette",
+    "description": "Hand-painted color composition",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "7e2ea896-2c5b-42d8-9992-95ae24cae5cc",
+    "name": "Moonwalk",
+    "description": "Journey across the Moon, Sun, and Earth as a crowned cosmic wanderer. Whimsical and surreal—perfect for dreamy, viral-ready edits.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "18c71d5b-f702-47fd-99c8-ce8392265c70",
+    "name": "Knight's diary",
+    "description": "An off-duty knight lounges above the Alps with a diary and a cat. Epic and cinematic — perfect for fantasy portraits and character reveals.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "cf29938d-8033-4f25-bfb9-43d6b8c19e07",
+    "name": "Argus",
+    "description": "Briton Rivière’s \"Ulysses and Argus\" below, with you entering its most emotional moment above. Tender, cinematic, and made for a shareable split-screen format.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "f41020a7-8f3d-46fa-9ef7-cd966037121d",
+    "name": "Fragments",
+    "description": "Layered abstract visual fragments",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "731211fd-ee97-463d-b279-4ca3259a5d29",
+    "name": "2000's paparazzi",
+    "description": "A retro VHS paparazzi clip — Y2K celebrity in graphic tee and low-rise jeans exits a luxury hotel through a golden revolving door, walks past flashing cameras into a black car.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "e3329ff5-dd6f-4773-aa3d-a1d3fba3cc0d",
+    "name": "Overexposed",
+    "description": "Extreme light exposure effect",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "b7078c0c-2f92-49d4-a0ff-94aeb9e6f6fd",
+    "name": "Dolphin ride",
+    "description": "A rider surfs on a dolphin as if it were a board. Surreal and absurd—built for visual comedy or a scroll-stopping hook.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "33f1fe65-287a-4711-ac37-0b88d5a56708",
+    "name": "Sticker peel",
+    "description": "A giant hand reaches in and peels the figure off the wall like a sticker, leaving blank surface behind, then presses it back down. Tactile and graphic—perfect for transitions or reveals.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "a8bc6ac3-f47c-40f9-900d-96fc06f20da7",
+    "name": "Multiverse",
+    "description": "Layered reality collision effect",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "8107940b-1567-4df5-b5de-617585a25972",
+    "name": "Skatedog",
+    "description": "A rider tears through the streets on a dachshund like a skateboard, pulling off tricks along the way. Perfect for viral videos and visual comedy.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "dfef0d55-b122-4727-aa3d-9fc9ffda976b",
+    "name": "Noir",
+    "description": "Cinematic noir lighting",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "57757dbc-7669-4495-b158-3f0104c6c1c1",
+    "name": "Casual monster slayer",
+    "description": "You transform into a cybernetic battle suit as a flaming giant crashes into the laundromat, then snap back to normal. Perfect for action edits, comic twists, and bold transformations.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "9ce05278-37ec-4cde-a483-c04868242f77",
+    "name": "Ocean",
+    "description": "Liquid sea color overlay",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "f9547ac5-21a8-4eb0-9312-12b62aec529c",
+    "name": "Selfie twin",
+    "description": "A second, identical version walks in, sits down, takes a selfie, and vanishes. Uncanny and playful—perfect for transitions or humor.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "a6b66c57-2d6b-40cd-9bf3-c4f5dcc276ee",
+    "name": "Sketch",
+    "description": "Hand-drawn textured linework",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "526f142a-42ce-4360-a353-ced1c7440234",
+    "name": "Monet muse",
+    "description": "Step into Monet’s world as a modern-day muse beneath an endless sky. Dreamy and painterly—perfect for poetic portraits or artful edits.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "9552b708-eaac-4fc0-ab3a-e9e5dacb4e9a",
+    "name": "Akrill",
+    "description": "Layered acrylic color blocks",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "28f715ae-0f20-4e57-87b7-9a856e96621a",
+    "name": "Magazine",
+    "description": "Printed magazine visual look",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "ccf1e30c-b2b7-4cec-ac06-e20a9745ec41",
+    "name": "Lost in a book",
+    "description": "",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "4e5df49c-a253-494f-b616-20f471f6c518",
+    "name": "Penguin ride",
+    "description": "",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "7ffc5f58-47d0-46f8-b90c-8539f70c3d13",
+    "name": "Cannabis",
+    "description": "Smoky psychedelic poster look",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "c18f36af-b7cc-4b9e-b320-8b3b06f25683",
+    "name": "3D render",
+    "description": "Clean 3D software reveal — camera orbiting a hyper-detailed character model, fast zooms, rotating lights, mouse clicks only.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "7608c318-2752-407b-acd6-6fd33732bdbf",
+    "name": "Action figure",
+    "description": "A hand lifts you out of the scene like a rigid plastic action figure and rotates you for a toy-review showcase — same pose, same expression, completely stiff.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "ab21d192-ae60-411f-ae52-ddf9cd9fedd5",
+    "name": "Bubbles",
+    "description": "Dreamy soap bubble texture",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "0d12822c-e095-43ec-a335-b4d335a897b3",
+    "name": "Orbit 360",
+    "description": "The camera circles around you in a smooth 360° motion, turning any photo into a cinematic video. Perfect for bold reveals, dynamic edits, and stylish transitions.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "f9fcdd8a-38f2-42fb-9a7d-aa24530e1354",
+    "name": "Orbital presence",
+    "description": "You become a cosmic giant, smoothing hurricanes with your fingertips before sitting on Earth beneath the stars. Perfect for surreal reveals, dreamlike edits, and cosmic transitions.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "92e39a66-01a4-4f17-9b86-2ffd8ceaac93",
+    "name": "Acid",
+    "description": "Psychedelic neon color distortion",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "96e1865c-c551-4aae-ad17-bf18447e74a1",
+    "name": "Race track",
+    "description": "Confident selfie walk on a sunlit race track while cars blast past at full speed — hair and clothes whipping violently from every shockwave, camera shaking, all smiles.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "fec762be-6b12-4fb3-92dc-588522ac814f",
+    "name": "Flash comic",
+    "description": "High-energy comic visuals",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "b3629014-bb3a-457d-88e9-448358233878",
+    "name": "Paper",
+    "description": "Handcrafted paper texture",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "a036628d-9723-435a-9d24-1060a9ab3699",
+    "name": "Random Glow",
+    "description": "random glow",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "27c5dbb2-9411-4c14-a55d-0004d304fcc6",
+    "name": "Toxic",
+    "description": "Radioactive neon color blast",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "536da8e0-dbbc-4990-9bfc-5da9df93ac49",
+    "name": "Broken mirror",
+    "description": "Broken glass reflection effect",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "9b3ff025-252e-40c5-bddb-97513d35c38a",
+    "name": "Hand paint",
+    "description": "Freeform hand-painted brushwork",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "3f631876-f34e-499f-87e6-bc9eada94581",
+    "name": "Lava",
+    "description": "Liquid lava color motion",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "ea4f53a8-a265-44ed-8f25-b7ce86da16b9",
+    "name": "Marble",
+    "description": "Sculpted marble visual style",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "744ebc4f-b323-47a0-aefe-560663bfe1a7",
+    "name": "Modern",
+    "description": "Clean geometric minimalism",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "af906dd9-af11-4a6d-a58e-ff8797e68813",
+    "name": "Puffin ride",
+    "description": "A rider glides through the city on puffins like roller skates, hovering two meters above the street. Absurd and hilarious—a trend-ready visual built to stop the scroll.",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "35b52620-f7b6-400a-9664-3f93838fe01f",
+    "name": "Origami",
+    "description": "Crisp origami-style geometr",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "928dd98a-20e4-42f8-8772-0cb5c9a758f9",
+    "name": "Two color",
+    "description": "High-contrast two-tone style",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "be3585f5-8246-4670-87a7-19c750e6da02",
+    "name": "Ultraviolet",
+    "description": "Neon ultraviolet glow effect",
+    "kind": "chain",
+    "preview_type": "video"
+  },
+  {
+    "id": "f9f7c94c-beca-4799-8276-238e54390a9d",
+    "name": "Vintage",
+    "description": "Hand-inked illustrated style",
+    "kind": "chain",
+    "preview_type": "video"
+  }
+]

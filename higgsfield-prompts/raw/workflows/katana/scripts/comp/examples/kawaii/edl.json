@@ -1,0 +1,388 @@
+{
+  "_about": "kawaii overlay example (port of the Yaong edit, first phrase): 4 s, 1440x1080, 30 fps from 24 fps plates, 134.4 BPM. Hard face-lock camera on every shot; starburst + arc letters, word on face, giant letters behind, typewriter, slashes, flashlight / magenta / mosaic / white / blur transitions, pink grade, glow, grain.",
+  "canvas": {
+    "w": 1440,
+    "h": 1080,
+    "fps": 30,
+    "frames": 120,
+    "bg": "#ffffff"
+  },
+  "beat": {
+    "bpm": 134.4,
+    "t0": 0
+  },
+  "look": "kawaii",
+  "cam": {
+    "type": "facelock",
+    "ld": 0.15,
+    "lx": 0.5,
+    "ly": 0.47,
+    "z0": 1.0,
+    "z1": 1.05,
+    "kick": 0.035
+  },
+  "clips": {
+    "A1": {
+      "frames_dir": "plates/A1",
+      "mask_dir": "mattes/A1",
+      "faces": "faces/A1.json"
+    },
+    "B1": {
+      "frames_dir": "plates/B1",
+      "mask_dir": "mattes/B1",
+      "faces": "faces/B1.json"
+    }
+  },
+  "shots": [
+    {
+      "t0": "b0",
+      "clip": "A1",
+      "src": 0.05,
+      "cam": {
+        "type": "facelock",
+        "ld": 0.14,
+        "ly": 0.52,
+        "z0": 1.0,
+        "z1": 1.05
+      },
+      "in": {
+        "type": "magenta",
+        "d": 0.2
+      },
+      "fx": {
+        "burst": {
+          "letters": "YAONG",
+          "seed": 1
+        },
+        "ears": {
+          "at": 0.1
+        },
+        "whisk": {
+          "at": 0.13
+        },
+        "face_doodles": {
+          "items": [
+            {
+              "t": "note",
+              "o": [-2.36, 1.47],
+              "s": 1.12,
+              "r": -0.24,
+              "at": 0.059
+            },
+            {
+              "t": "note2",
+              "o": [-3.21, -0.38],
+              "s": 0.99,
+              "r": -0.27,
+              "at": 0.113
+            },
+            {
+              "t": "squig",
+              "o": [2.59, -2.3],
+              "s": 0.6,
+              "r": 0.04,
+              "at": 0.113
+            },
+            {
+              "t": "spark",
+              "o": [-1.79, -0.42],
+              "s": 0.56,
+              "r": -0.27,
+              "at": 0.028
+            },
+            {
+              "t": "dots",
+              "o": [2.18, 0.13],
+              "s": 0.64,
+              "r": -0.31,
+              "at": 0.119
+            },
+            {
+              "t": "swirl",
+              "o": [1.36, 1.88],
+              "s": 0.6,
+              "r": 0.33,
+              "at": 0.08
+            }
+          ]
+        }
+      }
+    },
+    {
+      "t0": "b1",
+      "clip": "A1",
+      "src": 0.72,
+      "cam": {
+        "type": "facelock",
+        "ld": 0.17,
+        "ly": 0.44,
+        "z0": 1.04,
+        "z1": 1.1
+      },
+      "in": {
+        "type": "flashlight",
+        "d": 0.14
+      },
+      "fx": {
+        "word": {
+          "text": "HANA",
+          "at": 0.07
+        },
+        "stairs": true,
+        "blush": {
+          "at": 0.08
+        },
+        "blur": {
+          "at": 0.33,
+          "d": 0.117,
+          "max": 14
+        },
+        "face_doodles": {
+          "pool": ["heart", "spark", "star", "cross", "squig", "dash3"],
+          "n": 6,
+          "seed": 2
+        }
+      }
+    },
+    {
+      "t0": "b2",
+      "clip": "A1",
+      "src": 1.45,
+      "cam": {
+        "type": "facelock",
+        "ld": 0.15,
+        "ly": 0.46,
+        "z0": 1.0,
+        "z1": 1.04
+      },
+      "in": {
+        "type": "blur",
+        "d": 0.1
+      },
+      "fx": {
+        "big": {
+          "text": "DUL"
+        },
+        "stairs": {
+          "seed": 5
+        },
+        "outline": true,
+        "face_doodles": {
+          "pool": ["star", "arrow", "paw", "spark", "dots"],
+          "n": 5,
+          "seed": 3
+        }
+      }
+    },
+    {
+      "t0": "b3",
+      "clip": "A1",
+      "src": 2.0,
+      "cam": {
+        "type": "facelock",
+        "ld": 0.155,
+        "ly": 0.49,
+        "z0": 1.02,
+        "z1": 1.06
+      },
+      "in": {
+        "type": "flashlight",
+        "d": 0.12
+      },
+      "fx": {
+        "word": {
+          "text": "SET",
+          "at": 0.04
+        },
+        "ears": {
+          "at": 0.04
+        },
+        "eye_sparkle": {
+          "at": 0.1
+        },
+        "face_doodles": {
+          "pool": ["spark", "squig", "heartO", "dots", "cross", "star"],
+          "n": 6,
+          "seed": 4,
+          "ears": true
+        }
+      }
+    },
+    {
+      "t0": "b4",
+      "clip": "A1",
+      "src": 2.7,
+      "cam": {
+        "type": "facelock",
+        "ld": 0.18,
+        "ly": 0.43,
+        "z0": 1.08,
+        "z1": 1.14
+      },
+      "in": {
+        "type": "mosaic",
+        "d": 0.08,
+        "from": 30
+      },
+      "out": {
+        "type": "flashlight",
+        "d": 0.1,
+        "k": 0.9
+      },
+      "fx": {
+        "word": {
+          "text": "SET",
+          "at": 0
+        },
+        "whisk": {
+          "at": 0.02
+        },
+        "stairs": {
+          "seed": 8
+        },
+        "face_doodles": {
+          "pool": ["spark", "squig", "heartO", "dots", "cross"],
+          "n": 5,
+          "seed": 5
+        }
+      }
+    },
+    {
+      "t0": "b5",
+      "clip": "A1",
+      "src": 3.45,
+      "cam": {
+        "type": "facelock",
+        "ld": 0.14,
+        "ly": 0.52,
+        "z0": 1.0,
+        "z1": 1.06
+      },
+      "fx": {
+        "white": {
+          "d": 0.067
+        },
+        "magenta": {
+          "at": 0.067,
+          "d": 0.17
+        },
+        "burst": {
+          "letters": "YAONG",
+          "seed": 2,
+          "rot": 0.5
+        },
+        "ast": true,
+        "ears": {
+          "at": 0.08
+        },
+        "whisk": {
+          "at": 0.1
+        },
+        "face_doodles": {
+          "pool": ["note", "note2", "squig", "spark", "dots", "swirl"],
+          "n": 6,
+          "seed": 6,
+          "ears": true,
+          "avoid_top": true
+        }
+      }
+    },
+    {
+      "t0": "b6",
+      "clip": "A1",
+      "src": 4.0,
+      "cam": {
+        "type": "facelock",
+        "ld": 0.16,
+        "ly": 0.45,
+        "z0": 1.04,
+        "z1": 1.1
+      },
+      "fx": {
+        "fin": {
+          "d": 0.2,
+          "k": 1.15
+        },
+        "slash": {
+          "at": 0
+        },
+        "type": {
+          "parts": [
+            ["SARANG", "bold"],
+            ["HAE", "thin"]
+          ],
+          "at": 0.08,
+          "dt": 0.05
+        },
+        "outline": true,
+        "blush": {
+          "at": 0.1
+        },
+        "face_doodles": {
+          "pool": ["heart", "heartO", "spark", "heart", "bow", "spark"],
+          "n": 6,
+          "seed": 7
+        }
+      }
+    },
+    {
+      "t0": 3.3986,
+      "clip": "B1",
+      "src": 8.1,
+      "cam": {
+        "type": "facelock",
+        "ld": 0.15,
+        "ly": 0.5,
+        "z0": 1.02,
+        "z1": 1.08
+      },
+      "in": {
+        "type": "flashlight",
+        "d": 0.1,
+        "k": 0.8
+      },
+      "fx": {
+        "type": {
+          "parts": [
+            ["SARANG", "bold"],
+            ["HAE", "thin"]
+          ],
+          "at": 0,
+          "base": 9
+        },
+        "blush": true,
+        "ears": true,
+        "blurOut": {
+          "at": 0.32,
+          "d": 0.28
+        },
+        "tag": {
+          "text": "nabi.cam*",
+          "pos": "bottom",
+          "bx": 0.24,
+          "size": 38
+        },
+        "face_doodles": {
+          "pool": ["heart", "spark", "heartO", "star", "note", "bow"],
+          "n": 7,
+          "seed": 40,
+          "ears": true
+        }
+      }
+    }
+  ],
+  "post": {
+    "glow": 0.14,
+    "grain": {
+      "amt": 0.32
+    }
+  },
+  "sfx": {
+    "auto": false
+  },
+  "audio": {
+    "src": "ref/track.mp3",
+    "start": 0,
+    "sfx": false
+  }
+}

@@ -1,0 +1,29 @@
+# Skill card metadata for the marketplace sync. Docs + full template: src/skills/_example/ui.yaml
+
+display_name: "Product Photographer"
+sub_title: "Studio product photos, no studio"
+category: "content_creation"
+color: "#C72EDD"
+examples_section:
+  examples:
+    - src: "https://cdn.higgsfield.ai/ai_employees/Product%20Photographer/Catalog.png"
+      aspect_ratio: "56:75"
+    - src: "https://cdn.higgsfield.ai/ai_employees/Product%20Photographer/Life%20Style2%20.png"
+      aspect_ratio: "56:75"
+    - src: "https://cdn.higgsfield.ai/ai_employees/Product%20Photographer/Life%20Style4.png"
+      aspect_ratio: "56:75"
+    - src: "https://cdn.higgsfield.ai/ai_employees/Product%20Photographer/Life%20Style5.png"
+      aspect_ratio: "56:75"
+    - src: "https://cdn.higgsfield.ai/ai_employees/Product%20Photographer/Multi-Shot.jpeg"
+      aspect_ratio: "56:75"
+    - src: "https://cdn.higgsfield.ai/ai_employees/Product%20Photographer/Pinterest%20pins%2C%20hero%20banners%2C%20social%20carousels%202.png"
+      aspect_ratio: "56:75"
+    - src: "https://cdn.higgsfield.ai/ai_employees/Product%20Photographer/Pinterest%20pins%2C%20hero%20banners%2C%20social%20carousels%203.png"
+      aspect_ratio: "56:75"
+    - src: "https://cdn.higgsfield.ai/ai_employees/Product%20Photographer/product%20shots%20.png"
+      aspect_ratio: "56:75"
+
+example_prompts:
+  - "Create three clean studio packshots from my skincare bottle photo for a Shopify launch"
+  - "Turn my product photo into a warm kitchen lifestyle image with hands using it"
+  - "Create a vertical fragrance ad with the bottle floating in a sculptural water splash"

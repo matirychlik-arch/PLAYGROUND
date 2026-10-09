@@ -1,0 +1,345 @@
+{
+  "_about": "mixed-media xerox example (port of the Katana edit): 5 s, 4:3 1440x1080, 24 fps, cuts on a 139.6 BPM grid ('b<n>' = beat n). Plates b0/f1a/c0 at 1440 wide + divide mattes; faces = Katana tracks; 4 stickers; 1 die-cut cutout.",
+  "canvas": {
+    "w": 1440,
+    "h": 1080,
+    "fps": 24,
+    "frames": 120,
+    "bg": "#ffffff",
+    "boil": 2
+  },
+  "beat": {
+    "bpm": 139.6,
+    "t0": -0.015
+  },
+  "palette": {
+    "ink": "#0b0b0b",
+    "accent": "#b6ff1f",
+    "accent2": "#6fd600"
+  },
+  "look": "x",
+  "looks": {
+    "x_ramp": {
+      "type": "xerox",
+      "key": true,
+      "black": {
+        "from": 0.06,
+        "to": 0.0,
+        "ease": "in2",
+        "over": 0.85
+      },
+      "white": {
+        "from": 0.68,
+        "to": 0.42,
+        "ease": "in2",
+        "over": 0.85
+      }
+    }
+  },
+  "clips": {
+    "b0": {
+      "frames_dir": "plates/b0",
+      "mask_dir": "mattes/b0",
+      "faces": "faces/b0.json"
+    },
+    "f1a": {
+      "frames_dir": "plates/f1a",
+      "mask_dir": "mattes/f1a",
+      "faces": "faces/f1a.json"
+    },
+    "c0": {
+      "frames_dir": "plates/c0",
+      "mask_dir": "mattes/c0",
+      "faces": "faces/c0.json"
+    }
+  },
+  "assets": {
+    "stickers": [
+      "comp/stickers/s01.png",
+      "comp/stickers/s08.png",
+      "comp/stickers/s15.png",
+      "comp/stickers/s20.png"
+    ],
+    "sticker_look": {
+      "type": "xerox",
+      "key": true,
+      "black": 0.05,
+      "white": 0.92,
+      "grit": 0.3
+    },
+    "cutouts": [
+      {
+        "clip": "f1a",
+        "t": 1.5
+      }
+    ]
+  },
+  "shots": [
+    {
+      "t0": 0,
+      "clip": "f1a",
+      "src": 0.3,
+      "fx": {
+        "contour": true,
+        "doodles": 1
+      },
+      "note": "intro: still stance, hair flag in the wind; KATANA writes on below"
+    },
+    {
+      "t0": "b2",
+      "clip": "f1a",
+      "src": 2.04,
+      "fx": {
+        "contour": true,
+        "doodles": 2
+      }
+    },
+    {
+      "t0": "b4",
+      "clip": "b0",
+      "src": 0.6,
+      "fx": {
+        "contour": true,
+        "punch": true,
+        "doodles": 1
+      },
+      "note": "strong hit: punch-in"
+    },
+    {
+      "t0": "b5",
+      "clip": "c0",
+      "src": 3.2,
+      "cam": {
+        "z": 1.08
+      },
+      "fx": {
+        "cheeks": true,
+        "doodles": 1
+      }
+    },
+    {
+      "t0": "b5.75",
+      "special": {
+        "type": "flash",
+        "bigsplat": true
+      },
+      "note": "1/16 lime flash, KATANA rides on it"
+    },
+    {
+      "t0": "b6",
+      "clip": "f1a",
+      "src": 4.6,
+      "cam": {
+        "z": 1.12,
+        "ay": 0.35,
+        "sy": 0.4
+      },
+      "look": "x_ramp",
+      "fx": {
+        "contour": true,
+        "doodles": 2,
+        "glint": {
+          "from": [0.12, 0.42],
+          "to": [0.62, 0.36],
+          "at": 0.15,
+          "d": 0.3
+        }
+      },
+      "note": "worm's-eye; levels ramp up to the drop"
+    },
+    {
+      "t0": "b7",
+      "special": {
+        "type": "collage",
+        "duo_head": 0.1,
+        "doodles": 6,
+        "panels": [
+          {
+            "clip": "c0",
+            "src": 3.6,
+            "speed": 0.5,
+            "rect": [0.062, 0.139, 0.292, 0.722],
+            "cam": {
+              "z": 0.78,
+              "sx": 0.208,
+              "sy": 0.5
+            }
+          },
+          {
+            "clip": "b0",
+            "src": 3.6,
+            "rect": [0.417, 0.0, 0.583, 1.0],
+            "cam": {
+              "z": 1.15,
+              "ay": 0.4,
+              "sx": 0.73,
+              "sy": 0.5
+            }
+          }
+        ],
+        "lines": [
+          [
+            [0.399, -0.01],
+            [0.407, 0.3],
+            [0.396, 0.62],
+            [0.406, 1.01]
+          ]
+        ],
+        "keep": [
+          [0.17, 0.2, 0.31, 0.42],
+          [0.62, 0.08, 0.85, 0.42]
+        ]
+      },
+      "note": "collage card: close-up card + big panel, brackets, divider, doodles (Katana COLLAGE)"
+    },
+    {
+      "t0": "b8",
+      "clip": "b0",
+      "src": 3.0,
+      "fx": {
+        "contour": true,
+        "cheeks": true,
+        "punch": true,
+        "shake": true,
+        "doodles": 3,
+        "crown": {
+          "dy": -1.9
+        }
+      },
+      "note": "DROP: power pose on the downbeat, sticker burst"
+    },
+    {
+      "t0": "b9",
+      "clip": "f1a",
+      "src": 6.0,
+      "cam": {
+        "ladder": [1, 1.12, 1.24, 1.36],
+        "ay": 0.4,
+        "sy": 0.4
+      },
+      "fx": {
+        "contour": true,
+        "doodles": 1
+      },
+      "note": "16th zoom ladder on continuous source"
+    },
+    {
+      "t0": "b10",
+      "clip": "c0",
+      "src": 6.95,
+      "look": "neg",
+      "fx": {
+        "doodles": 0
+      }
+    },
+    {
+      "t0": "b10.25",
+      "clip": "c0",
+      "src": 8.4,
+      "look": "duo",
+      "fx": {
+        "cheeks": true,
+        "doodles": 0
+      }
+    },
+    {
+      "t0": "b10.5",
+      "clip": "c0",
+      "src": 7.3,
+      "look": "neg",
+      "fx": {
+        "stutter": {
+          "n": 3
+        },
+        "doodles": 0
+      }
+    },
+    {
+      "t0": "b10.75",
+      "special": "white",
+      "note": "white splatter flash, sticker burst"
+    },
+    {
+      "t0": "b11",
+      "clip": "b0",
+      "src": 7.27,
+      "fx": {
+        "contour": true,
+        "shake": true,
+        "doodles": 2
+      },
+      "note": "boot stomp + HERE! slam"
+    }
+  ],
+  "specials": [
+    {
+      "t0": "b7.75",
+      "n": 2,
+      "type": "black",
+      "sparkle": false
+    }
+  ],
+  "text": [
+    {
+      "type": "graffiti",
+      "word": "KATANA",
+      "t0": "b1",
+      "t1": "b6",
+      "mode": "write",
+      "region": "bottom",
+      "cap": 300,
+      "seed": 10,
+      "wkeys": ["b1", "b1.5", "b2", "b2.5", "b3", "b3.5", "b3.8"]
+    },
+    {
+      "type": "graffiti",
+      "word": "HERE!",
+      "t0": "b11",
+      "t1": 5.0,
+      "mode": "slam",
+      "region": "rightwide",
+      "cap": 380,
+      "nib": 0.19,
+      "halo": 0.07
+    }
+  ],
+  "stickers": [
+    {
+      "t0": "b8",
+      "t1": "b9",
+      "kind": "graphic",
+      "n": 4,
+      "mode": "burst",
+      "hero": true,
+      "ids": [1, 2, 3, 4]
+    },
+    {
+      "t0": "b9",
+      "t1": "b10",
+      "kind": "cutout",
+      "n": 2,
+      "mode": "burst"
+    },
+    {
+      "t0": "b10.75",
+      "t1": 5.0,
+      "kind": "graphic",
+      "n": 2,
+      "mode": "burst",
+      "ids": [4, 1]
+    }
+  ],
+  "post": {
+    "dust": true,
+    "border": true
+  },
+  "sfx": {
+    "auto": false
+  },
+  "audio": {
+    "src": "ref/ref.m4a",
+    "start": 0,
+    "sfx": false,
+    "sfx_gain": 0.6
+  }
+}
