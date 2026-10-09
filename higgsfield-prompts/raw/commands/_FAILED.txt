@@ -1,0 +1,9 @@
+Higgsfield get_preset_instructions results that were NOT real instruction entries
+=================================================================================
+These tokens returned {"mode":"not_found","requested":"<token>","presets":[...recipe list...]} (no instructions text exists for them on the server):
+/ugc-video, /faceless-video, /ad-multiplier, /explainer, /thumbnail, /character-sheet, /narration, /website, /brand, /soul, /unknown-test-token
+Their .md files contain the not_found JSON. The 'presets' array is the same 64-recipe list in every response (only the ORDER differed per response, server-side shuffled); the files for the 10 tokens other than /ugc-video reuse the /ugc-video ordering with only "requested" changed.
+Note: the 'requested' value is echoed without the leading slash.
+
+Transient failure (retried successfully):
+/use-blender/references/installation - first call timed out after 60s; second call succeeded.

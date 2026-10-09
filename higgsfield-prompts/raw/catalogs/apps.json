@@ -1,0 +1,38 @@
+[
+  {
+    "app_id": "3a69aa1d-8456-4705-92b5-b0616b03e642",
+    "name": "Match Cut + Tracelab",
+    "description": "Create cinematic match-cut reels, track objects and faces, style motion overlays, and export finished video from one Higgsfield studio.",
+    "actions": [
+      "list_render_modes",
+      "create_render",
+      "create_tracelab",
+      "create_facecut",
+      "create_searchcut",
+      "create_logocut",
+      "create_notebook",
+      "create_notereel",
+      "create_productcut",
+      "create_stickercut",
+      "create_spherecut",
+      "create_lenscut",
+      "create_scrapboard",
+      "create_wordstack",
+      "create_typewriter",
+      "create_commentcut",
+      "create_crt",
+      "create_retropop",
+      "create_nightvision",
+      "create_crtglitch",
+      "create_thermal",
+      "create_black_hot",
+      "create_white_hot",
+      "create_rainbow_thermal",
+      "create_glitch",
+      "create_vhs",
+      "create_nokia",
+      "get_render"
+    ],
+    "manifest_revision": "v3"
+  }
+]
