@@ -1,0 +1,12 @@
+{
+  "workflow": "ad-multiplier",
+  "version": "1.5",
+  "source": "mcp__Higgsfield__get_workflow_instructions / get_workflow_bundle_file",
+  "available_paths": [
+    "SKILL.md",
+    "references/media-pipeline.md",
+    "references/prompt-writer.md",
+    "references/recreate.md",
+    "ui.yaml"
+  ]
+}

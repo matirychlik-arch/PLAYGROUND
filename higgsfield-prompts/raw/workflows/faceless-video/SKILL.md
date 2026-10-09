@@ -1670,4 +1670,3 @@ Rejections — never retry the same call; each has its own fix:
   `Unlim configs` rows and retry inside them.
 
 Retries and re-submitted jobs carry the same flag as their original submission.
-
