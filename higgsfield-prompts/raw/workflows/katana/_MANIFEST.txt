@@ -1,0 +1,43 @@
+mode: workflow
+source: bundled_resource
+workflow: katana
+scripts_dir: /home/user/.higgsfield/workflows/katana
+available_paths:
+SKILL.md
+references/analysis.md
+references/budget.md
+references/compositing.md
+references/creative-quality.md
+references/generation.md
+references/genjutsu-routing.md
+references/mcp-api.md
+references/qa-delivery.md
+references/routing.md
+references/sandbox.md
+scripts/analyze_ref.py
+scripts/assemble.py
+scripts/audio.py
+scripts/comp/engine.js
+scripts/comp/examples/kawaii/edl.json
+scripts/comp/examples/kawaii/fx.js
+scripts/comp/examples/mixed_media/edl.json
+scripts/comp/examples/mixed_media/fx.js
+scripts/comp/render.py
+scripts/compare.py
+scripts/faces.py
+scripts/fetch_ref.py
+scripts/fonts/cormorant-OFL.txt
+scripts/fonts/inter-OFL.txt
+scripts/fonts/leaguegothic-OFL.txt
+scripts/fonts/sources.json
+scripts/fonts/unifrakturmaguntia-OFL.txt
+scripts/frames.py
+scripts/ledger.py
+scripts/matte.py
+scripts/models/yunet-LICENSE.txt
+scripts/prices.json
+scripts/rr.sh
+scripts/rrio.py
+scripts/smoke.py
+scripts/textlayers.py
+available_directories: . references scripts scripts/comp scripts/comp/examples scripts/comp/examples/kawaii scripts/comp/examples/mixed_media scripts/fonts scripts/models
